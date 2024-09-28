@@ -1,7 +1,7 @@
 const express = require("express");
 const sql = require("mssql");
 var cors = require("cors");
-require('dotenv').config()
+require("dotenv").config();
 
 const dbConfig = {
   user: process.env.DB_USER,
@@ -18,7 +18,10 @@ const dbConfig = {
 // Create the web server
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: '*', // Allow all origins
+}));
+app.options("*", cors());
 const port = 8250;
 
 app.get("/health", async (req, res) => {
@@ -80,9 +83,8 @@ ORDER BY RESETS DESC, cLevel DESC;`;
       return ({ cLevel, Class, Experience, Reset, Name } = row);
     });
 
-    res.setHeader('Content-Type', 'application/json');
+    res.setHeader("Content-Type", "application/json");
     return res.end(JSON.stringify({ data: normalizeResult }));
-
   } catch (err) {
     console.log("err: ", err);
     res.status(500).send("Internal Server Error");
