@@ -18,11 +18,9 @@ const dbConfig = {
 // Create the web server
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin: '*', // Allow all origins
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow all HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow all headers
-}));
+app.use(cors());
+app.options('*', cors());
+
 const port = 8250;
 
 app.get("/health", async (req, res) => {
