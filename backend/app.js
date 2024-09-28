@@ -80,12 +80,9 @@ ORDER BY RESETS DESC, cLevel DESC;`;
       return ({ cLevel, Class, Experience, Reset, Name } = row);
     });
 
-    console.log(normalizeResult)
-
     res.setHeader('Content-Type', 'application/json');
     return res.end(JSON.stringify({ data: normalizeResult }));
 
-    return res.send(normalizeResult);
   } catch (err) {
     console.log("err: ", err);
     res.status(500).send("Internal Server Error");
