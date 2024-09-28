@@ -333,8 +333,8 @@ function App() {
                   top100.map((player) => {
                     return (
                       <p className="text-left">
-                        Name: ${player.Name}| Level: ${player.cLevel} | Resets:
-                        ${player.Reset} |
+                        Name: {player.Name}| Level: {player.cLevel} | Resets:
+                        {player.RESETS} |
                       </p>
                     );
                   })}
