@@ -7,7 +7,7 @@ const dbConfig = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   server: process.env.DB_NAME, // Update this if the database is on a different server
-  database: "kal_db",
+  database: process.env.DB_DEFAULT_NAME,
   port: 1433,
   options: {
     encrypt: false, // Required for older SQL Server versions
