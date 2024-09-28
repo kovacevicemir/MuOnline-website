@@ -29,8 +29,8 @@ function App() {
         const ttt = await res.json()
         console.log("res data: ", ttt);
 
-        if (res?.data) {
-          setTop100(res?.data);
+        if (ttt?.data) {
+          setTop100(ttt?.data);
         }
       };
 
