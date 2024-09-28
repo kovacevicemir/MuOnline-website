@@ -20,19 +20,23 @@ function App() {
   const [top100, setTop100] = useState([]);
 
   useEffect(() => {
-    const fetchTop100 = async () => {
-      const res = await fetch("http://localhost:8250/ranking", {
-        method: "GET",
-      });
+    try {
+      const fetchTop100 = async () => {
+        const res = await fetch("http://localhost:8250/ranking", {
+          method: "GET",
+        });
 
-      console.log("res data: ", res);
+        console.log("res data: ", res);
 
-      if (res?.data) {
-        setTop100(res?.data);
-      }
-    };
+        if (res?.data) {
+          setTop100(res?.data);
+        }
+      };
 
-    fetchTop100();
+      fetchTop100();
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   const registerHandler = async () => {
@@ -66,27 +70,34 @@ function App() {
 
     const { username, email, password } = registrationDetails;
 
-    const res = await fetch("http://localhost:8250/register", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, email, password }),
-    });
+    try {
+      const res = await fetch("http://localhost:8250/register", {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, email, password }),
+      });
 
-    if (res?.status === 403) {
-      setRegistrationMessage(`Username or Email already exist!
-      Please refresh the page and try again!`);
+      if (res?.status === 403) {
+        setRegistrationMessage(`Username or Email already exist!
+        Please refresh the page and try again!`);
+        return;
+      }
+
+      if (res?.status === 200) {
+        setRegistrationMessage(
+          `Your is account is created! 
+  Username: ${registrationDetails.username}
+  Password: ${registrationDetails.password}`
+        );
+
+        return;
+      }
+
+      setRegistrationMessage(`Something went wrong!
+      Please refresh the page and try again! ${res.status}`);
+    } catch (error) {
+      console.log(error);
     }
-
-    if (res?.status === 200) {
-      setRegistrationMessage(
-        `Your is account is created! 
-Username: ${registrationDetails.username}
-Password: ${registrationDetails.password}`
-      );
-    }
-
-    setRegistrationMessage(`Something went wrong!
-    Please refresh the page and try again!`);
   };
 
   return (
