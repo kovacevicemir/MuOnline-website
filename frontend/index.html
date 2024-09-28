@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mu Online Private Server</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <!-- Jumbotron -->
+    <section
+      class="relative bg-cover bg-no-repeat bg-center h-[300px] sm:h-[800px] w-[100vw]"
+      style="
+        background-image: url('https://www.willwork4games.net/wp-content/uploads/2019/08/mu-sea-launch-01.jpg');
+        background-size: contain;
+        background-position: center;
+      "
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div
+        class="relative z-10 flex flex-col justify-center items-center h-full"
+      >
+        <h1 class="text-lg sm:text-xl xl:text-4xl font-bold text-yellow-500">
+          Mu Online Moonwell - Season 6 Server!
+        </h1>
+        <p class="text-lg mt-4">Register now and start your adventure.</p>
+        <a
+          href="#register"
+          class="mt-8 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full text-xl"
+          >Register Now</a
+        >
+      </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="py-16 bg-gray-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start justify-center"
+        >
+          <!-- Register Section -->
+          <div class="bg-gray-700 p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold text-yellow-500 text-center mb-8">
+              Register
+            </h2>
+            <form class="space-y-6">
+              <div>
+                <label for="username" class="block mb-2 text-sm text-white"
+                  >Username</label
+                >
+                <input
+                  type="text"
+                  id="username"
+                  class="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email" class="block mb-2 text-sm text-white"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
+                  required
+                />
+              </div>
+              <div>
+                <label for="password" class="block mb-2 text-sm text-white"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  class="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
+                  required
+                />
+              </div>
+              <div>
+                <label for="captcha" class="block mb-2 text-sm text-white"
+                  >Captcha (Coming Soon)</label
+                >
+                <input
+                  type="text"
+                  id="captcha"
+                  class="w-full p-3 border border-gray-600 rounded bg-gray-900 text-gray-400"
+                  disabled
+                  placeholder="Captcha here"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg font-semibold"
+              >
+                Register
+              </button>
+            </form>
+          </div>
+
+          <!-- Reset Character Section -->
+          <div class="bg-gray-700 p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold text-yellow-500 text-center mb-8">
+              Reset Character
+            </h2>
+            <form class="space-y-6">
+              <div>
+                <label class="block mb-2 text-sm text-white" for="username"
+                  >Username</label
+                >
+                <input
+                  class="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
+                  type="text"
+                  id="username"
+                  placeholder="Enter your username"
+                  required
+                />
+              </div>
+              <div>
+                <label class="block mb-2 text-sm text-white" for="password"
+                  >Password</label
+                >
+                <input
+                  class="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
+                  type="password"
+                  id="password"
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+              <div>
+                <label class="block mb-2 text-sm text-white" for="captcha"
+                  >Captcha</label
+                >
+                <input
+                  class="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
+                  type="text"
+                  id="captcha"
+                  placeholder="Enter captcha"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg font-semibold"
+              >
+                Reset Character
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-16">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-yellow-500 mb-8">
+          Download the Game
+        </h2>
+        <a
+          href="#"
+          class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl rounded-full"
+          >Download Mu Online Client</a
+        >
+        <p class="mt-4 text-gray-400">
+          Please ensure you have the latest version of the game.
+        </p>
+      </div>
+    </section>
+
+    <!-- Top 10 Players Section -->
+    <section id="players" class="py-16">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-yellow-500 mb-8">Top 10 Players</h2>
+        <div
+          class="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <div
+            class="bg-gray-800 w-full rounded-lg p-6 shadow-lg flex flex-col items-center text-white"
+          >
+            <div class="flex flex-col items-center">
+              <h3 class="text-xl font-semibold text-center">Knight</h3>
+              <p class="text-left">Level: 400 | Resets: 50</p>
+              <p class="text-left">Level: 400 | Resets: 45</p>
+              <p class="text-left">Level: 400 | Resets: 42</p>
+              <p class="text-left">Level: 400 | Resets: 41</p>
+              <p class="text-left">Level: 400 | Resets: 37</p>
+              <p class="text-left">Level: 400 | Resets: 36</p>
+              <p class="text-left">Level: 400 | Resets: 35</p>
+              <p class="text-left">Level: 400 | Resets: 29</p>
+              <p class="text-left">Level: 400 | Resets: 27</p>
+              <p class="text-left">Level: 400 | Resets: 26</p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 w-full rounded-lg p-6 shadow-lg flex flex-col items-center text-white"
+          >
+            <div class="flex flex-col items-center">
+              <h3 class="text-xl font-semibold text-center">Wizard</h3>
+              <p class="text-left">Level: 400 | Resets: 50</p>
+              <p class="text-left">Level: 400 | Resets: 45</p>
+              <p class="text-left">Level: 400 | Resets: 42</p>
+              <p class="text-left">Level: 400 | Resets: 41</p>
+              <p class="text-left">Level: 400 | Resets: 37</p>
+              <p class="text-left">Level: 400 | Resets: 36</p>
+              <p class="text-left">Level: 400 | Resets: 35</p>
+              <p class="text-left">Level: 400 | Resets: 29</p>
+              <p class="text-left">Level: 400 | Resets: 27</p>
+              <p class="text-left">Level: 400 | Resets: 26</p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 w-full rounded-lg p-6 shadow-lg flex flex-col items-center text-white"
+          >
+            <div class="flex flex-col items-center">
+              <h3 class="text-xl font-semibold text-center">Elf</h3>
+              <p class="text-left">Level: 400 | Resets: 50</p>
+              <p class="text-left">Level: 400 | Resets: 45</p>
+              <p class="text-left">Level: 400 | Resets: 42</p>
+              <p class="text-left">Level: 400 | Resets: 41</p>
+              <p class="text-left">Level: 400 | Resets: 37</p>
+              <p class="text-left">Level: 400 | Resets: 36</p>
+              <p class="text-left">Level: 400 | Resets: 35</p>
+              <p class="text-left">Level: 400 | Resets: 29</p>
+              <p class="text-left">Level: 400 | Resets: 27</p>
+              <p class="text-left">Level: 400 | Resets: 26</p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 w-full rounded-lg p-6 shadow-lg flex flex-col items-center text-white"
+          >
+            <div class="flex flex-col items-center">
+              <h3 class="text-xl font-semibold text-center">Magic gladiator</h3>
+              <p class="text-left">Level: 400 | Resets: 50</p>
+              <p class="text-left">Level: 400 | Resets: 45</p>
+              <p class="text-left">Level: 400 | Resets: 42</p>
+              <p class="text-left">Level: 400 | Resets: 41</p>
+              <p class="text-left">Level: 400 | Resets: 37</p>
+              <p class="text-left">Level: 400 | Resets: 36</p>
+              <p class="text-left">Level: 400 | Resets: 35</p>
+              <p class="text-left">Level: 400 | Resets: 29</p>
+              <p class="text-left">Level: 400 | Resets: 27</p>
+              <p class="text-left">Level: 400 | Resets: 26</p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 w-full rounded-lg p-6 shadow-lg flex flex-col items-center text-white"
+          >
+            <div class="flex flex-col items-center">
+              <h3 class="text-xl font-semibold text-center">Dark Lord</h3>
+              <p class="text-left">Level: 400 | Resets: 50</p>
+              <p class="text-left">Level: 400 | Resets: 45</p>
+              <p class="text-left">Level: 400 | Resets: 42</p>
+              <p class="text-left">Level: 400 | Resets: 41</p>
+              <p class="text-left">Level: 400 | Resets: 37</p>
+              <p class="text-left">Level: 400 | Resets: 36</p>
+              <p class="text-left">Level: 400 | Resets: 35</p>
+              <p class="text-left">Level: 400 | Resets: 29</p>
+              <p class="text-left">Level: 400 | Resets: 27</p>
+              <p class="text-left">Level: 400 | Resets: 26</p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 w-full rounded-lg p-6 shadow-lg flex flex-col items-center text-white"
+          >
+            <div class="flex flex-col items-center">
+              <h3 class="text-xl font-semibold text-center">Summoner</h3>
+              <p class="text-left">Level: 400 | Resets: 50</p>
+              <p class="text-left">Level: 400 | Resets: 45</p>
+              <p class="text-left">Level: 400 | Resets: 42</p>
+              <p class="text-left">Level: 400 | Resets: 41</p>
+              <p class="text-left">Level: 400 | Resets: 37</p>
+              <p class="text-left">Level: 400 | Resets: 36</p>
+              <p class="text-left">Level: 400 | Resets: 35</p>
+              <p class="text-left">Level: 400 | Resets: 29</p>
+              <p class="text-left">Level: 400 | Resets: 27</p>
+              <p class="text-left">Level: 400 | Resets: 26</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="py-16 bg-gray-800">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-yellow-500 text-center mb-8">
+          Server News & Info
+        </h2>
+        <div class="space-y-6">
+          <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold">
+              Latest Update: Season 6 Released!
+            </h3>
+            <p class="mt-2">
+              We are excited to announce the release of Season 6! Classic maps,
+              events, and equipment are now available.
+            </p>
+          </div>
+          <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold">Server Info</h3>
+            <p class="mt-2">
+              Experience Rate: Medium | Drop Rate: 70% | Max Level: 400 | Max
+              Resets: 100 | Season 6
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="py-16">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-yellow-500 mb-8">Contact Us</h2>
+        <p class="text-gray-400">
+          For any inquiries, please contact us at:
+          <a href="mailto:admin@admin.com" class="text-blue-500 hover:underline"
+            >admin@admin.com</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <footer class="py-6 bg-gray-900 text-center text-gray-400">
+      <p>&copy; 2024 Mu Online Private Server. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
