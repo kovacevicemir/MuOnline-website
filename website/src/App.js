@@ -26,7 +26,7 @@ function App() {
           method: "GET",
         });
 
-        const ttt = await res.json()
+        const ttt = await res.json();
         console.log("res data: ", ttt);
 
         if (ttt?.data) {
@@ -331,10 +331,12 @@ function App() {
               <div className="flex flex-col items-center">
                 {top100 &&
                   top100.map((player) => {
-                    <p className="text-left">
-                      Name: ${player.Name}| Level: ${player.cLevel} | Resets: $
-                      {player.Reset} |
-                    </p>;
+                    return (
+                      <p className="text-left">
+                        Name: ${player.Name}| Level: ${player.cLevel} | Resets:
+                        ${player.Reset} |
+                      </p>
+                    );
                   })}
               </div>
             </div>
