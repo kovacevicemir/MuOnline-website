@@ -26,7 +26,8 @@ function App() {
           method: "GET",
         });
 
-        console.log("res data: ", res);
+        const ttt = await res.json()
+        console.log("res data: ", ttt);
 
         if (res?.data) {
           setTop100(res?.data);
