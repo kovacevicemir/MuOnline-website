@@ -25,10 +25,16 @@ function App() {
   const [resetMessage, setResetMessage] = useState("");
   const [top100, setTop100] = useState([]);
 
+  const backendURL =
+    process.env.REACT_APP_IS_PROD === "YES"
+      ? process.env.REACT_APP_PROD_BACKEND_URL
+      : "http://localhost:8250";
+
+
   useEffect(() => {
     try {
       const fetchTop100 = async () => {
-        const res = await fetch("http://localhost:8250/ranking", {
+        const res = await fetch(`${backendURL}/ranking`, {
           method: "GET",
         });
 
@@ -58,7 +64,7 @@ function App() {
     const { username, password } = resetDetails;
 
     try {
-      const res = await fetch("http://localhost:8250/reset", {
+      const res = await fetch(`${backendURL}/reset`, {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -117,7 +123,7 @@ function App() {
     const { username, email, password } = registrationDetails;
 
     try {
-      const res = await fetch("http://localhost:8250/register", {
+      const res = await fetch(`${backendURL}/register`, {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),

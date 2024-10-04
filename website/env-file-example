@@ -1,0 +1,2 @@
+REACT_APP_IS_PROD="YES"
+REACT_APP_PROD_BACKEND_URL="http://194cdfsdfs0:port"
