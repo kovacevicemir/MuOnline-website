@@ -19,7 +19,7 @@ const dbConfig = {
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.options('*', cors());
+app.options("*", cors());
 
 const port = 8250;
 
@@ -55,6 +55,42 @@ VALUES
     await sql.query(formQuery);
 
     return res.status(200).send("Account registered successfully!");
+  } catch (err) {
+    console.log("err: ", err);
+    res.status(500).send("Internal Server Error");
+  } finally {
+    sql.close(); // Close the database connection
+  }
+});
+
+app.post("/reset", async (req, res) => {
+  try {
+    await sql.connect(dbConfig);
+    let { username, password } = req.body;
+    username = username.trim();
+    password = password.trim();
+    // add more sanitize
+
+    console.log("Reset - REQ BODY: ", req.body);
+
+    const usernameAndPasswordQuery = `SELECT * FROM MuOnline.dbo.MEMB_INFO WHERE memb___id = '${username}' AND memb__pwd = '${password}'`;
+    const result = await sql.query(usernameAndPasswordQuery);
+
+    if (result?.recordset?.[0] !== undefined) {
+      return res.status(403).send("User does not exist - Wrong password?");
+    }
+
+    // Update the existing record by incrementing RESETS and setting cLevel to 1
+    const updateQuery = `
+      UPDATE MuOnline.dbo.MEMB_INFO 
+      SET RESETS = RESETS + 1, cLevel = 1
+      WHERE memb___id = '${username}' AND memb__pwd = '${password}'
+    `;
+
+    await sql.query(updateQuery);
+    return res
+      .status(200)
+      .send("User found. RESETS incremented, cLevel set to 1.");
   } catch (err) {
     console.log("err: ", err);
     res.status(500).send("Internal Server Error");

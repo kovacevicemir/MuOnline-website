@@ -17,6 +17,12 @@ function App() {
     password: "",
   });
   const [registrationMessage, setRegistrationMessage] = useState("");
+
+  const [resetDetails, setResetDetails] = useState({
+    username: "",
+    password: "",
+  });
+  const [resetMessage, setResetMessage] = useState("");
   const [top100, setTop100] = useState([]);
 
   useEffect(() => {
@@ -27,8 +33,6 @@ function App() {
         });
 
         const ttt = await res.json();
-        console.log("res data: ", ttt);
-
         if (ttt?.data) {
           setTop100(ttt?.data);
         }
@@ -39,6 +43,47 @@ function App() {
       console.log(error);
     }
   }, []);
+
+  const handleReset = async () => {
+    if (resetDetails?.username === "" || resetDetails?.username === undefined) {
+      alert("username cant be empty");
+      return;
+    }
+
+    if (resetDetails?.password === "" || resetDetails?.password === undefined) {
+      alert("password cant be empty");
+      return;
+    }
+
+    const { username, password } = resetDetails;
+
+    try {
+      const res = await fetch("http://localhost:8250/reset", {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (res?.status === 403) {
+        setResetMessage(`Username or password is wrong!`);
+        return;
+      }
+
+      if (res?.status === 200) {
+        setResetMessage(
+          `+1 Reset successfully 
+  Username: ${registrationDetails.username}`
+        );
+
+        return;
+      }
+
+      setResetMessage(`Something went wrong!
+      Please refresh the page and try again! ${res.status}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const registerHandler = async () => {
     if (validateEmail(registrationDetails?.email) === null) {
@@ -242,63 +287,87 @@ function App() {
               )}
 
               {/* <!-- Reset Character Section --> */}
-              <div className="bg-gray-700 p-8 rounded-lg shadow-lg">
-                <h2 className="text-3xl font-bold text-yellow-500 text-center mb-8">
-                  Reset Character
-                </h2>
-                <form className="space-y-6">
-                  <div>
-                    <label
-                      className="block mb-2 text-sm text-white"
-                      for="username"
-                    >
-                      Username
-                    </label>
-                    <input
-                      className="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
-                      type="text"
-                      id="username"
-                      placeholder="Enter your username"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label
-                      className="block mb-2 text-sm text-white"
-                      for="password"
-                    >
-                      Password
-                    </label>
-                    <input
-                      className="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
-                      type="password"
-                      id="password"
-                      placeholder="Enter your password"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label
-                      className="block mb-2 text-sm text-white"
-                      for="captcha"
-                    >
-                      Captcha
-                    </label>
-                    <input
-                      className="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
-                      type="text"
-                      id="captcha"
-                      placeholder="Enter captcha"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg font-semibold"
-                  >
+              {resetMessage && (
+                <pre className="whitespace-break-spaces text-orange-300 text-md font-semibold">
+                  {resetMessage}
+                </pre>
+              )}
+              {resetMessage === "" && (
+                <div className="bg-gray-700 p-8 rounded-lg shadow-lg">
+                  <h2 className="text-3xl font-bold text-yellow-500 text-center mb-8">
                     Reset Character
-                  </button>
-                </form>
-              </div>
+                  </h2>
+                  <div className="space-y-6">
+                    <div>
+                      <label
+                        className="block mb-2 text-sm text-white"
+                        for="username"
+                      >
+                        Username
+                      </label>
+                      <input
+                        autoComplete="new-password"
+                        className="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
+                        type="text"
+                        id="username"
+                        placeholder="Enter your username"
+                        required
+                        onChange={(e) =>
+                          setResetDetails({
+                            ...resetDetails,
+                            username: e.target.value,
+                          })
+                        }
+                        value={resetDetails.username}
+                      />
+                    </div>
+                    <div>
+                      <label
+                        className="block mb-2 text-sm text-white"
+                        for="password"
+                      >
+                        Password
+                      </label>
+                      <input
+                        autoComplete="new-password"
+                        className="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                        onChange={(e) =>
+                          setResetDetails({
+                            ...resetDetails,
+                            password: e.target.value,
+                          })
+                        }
+                        value={resetDetails.password}
+                      />
+                    </div>
+                    <div>
+                      <label
+                        className="block mb-2 text-sm text-white"
+                        for="captcha"
+                      >
+                        Captcha
+                      </label>
+                      <input
+                        className="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
+                        type="text"
+                        id="captcha"
+                        placeholder="Enter captcha"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg font-semibold"
+                      onClick={() => handleReset()}
+                    >
+                      Reset Character
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </section>
