@@ -20,6 +20,7 @@ function App() {
 
   const [resetDetails, setResetDetails] = useState({
     username: "",
+    nickname: "",
     password: "",
   });
   const [resetMessage, setResetMessage] = useState("");
@@ -61,13 +62,18 @@ function App() {
       return;
     }
 
-    const { username, password } = resetDetails;
+    if (resetDetails?.nickname === "" || resetDetails?.nickname === undefined) {
+      alert("nickname cant be empty");
+      return;
+    }
+
+    const { username, password, nickname } = resetDetails;
 
     try {
       const res = await fetch(`${backendURL}/reset`, {
         method: "post",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, nickname, password }),
       });
 
       if (res?.status === 403) {
@@ -78,7 +84,7 @@ function App() {
       if (res?.status === 200) {
         setResetMessage(
           `+1 Reset successfully 
-  Username: ${registrationDetails.username}`
+  Username: ${resetDetails.username}`
         );
 
         return;
@@ -325,6 +331,29 @@ function App() {
                           })
                         }
                         value={resetDetails.username}
+                      />
+                    </div>
+                    <div>
+                      <label
+                        className="block mb-2 text-sm text-white"
+                        for="nickname"
+                      >
+                        Nickname
+                      </label>
+                      <input
+                        autoComplete="new-password"
+                        className="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
+                        type="text"
+                        id="nickname"
+                        placeholder="Enter your char nickname"
+                        required
+                        onChange={(e) =>
+                          setResetDetails({
+                            ...resetDetails,
+                            nickname: e.target.value,
+                          })
+                        }
+                        value={resetDetails.nickname}
                       />
                     </div>
                     <div>

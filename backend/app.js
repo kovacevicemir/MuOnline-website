@@ -66,8 +66,9 @@ VALUES
 app.post("/reset", async (req, res) => {
   try {
     await sql.connect(dbConfig);
-    let { username, password } = req.body;
+    let { username, nickname, password } = req.body;
     username = username.trim();
+    nickname = nickname.trim();
     password = password.trim();
     // add more sanitize
 
@@ -76,16 +77,21 @@ app.post("/reset", async (req, res) => {
     const usernameAndPasswordQuery = `SELECT * FROM MuOnline.dbo.MEMB_INFO WHERE memb___id = '${username}' AND memb__pwd = '${password}'`;
     const result = await sql.query(usernameAndPasswordQuery);
 
-    if (result?.recordset?.[0] !== undefined) {
+    console.log("RESULT: ", result?.recordset?.[0]);
+
+    if (
+      result?.recordset?.[0] === undefined ||
+      result?.recordset?.[0] === null
+    ) {
       return res.status(403).send("User does not exist - Wrong password?");
     }
 
     // Update the existing record by incrementing RESETS and setting cLevel to 1
     const updateQuery = `
-      UPDATE MuOnline.dbo.MEMB_INFO 
-      SET RESETS = RESETS + 1, cLevel = 1
-      WHERE memb___id = '${username}' AND memb__pwd = '${password}'
-    `;
+  UPDATE MuOnline.dbo.Character 
+  SET RESETS = ISNULL(RESETS, 0) + 1, cLevel = 1
+  WHERE AccountID = '${username}' AND Name = '${nickname}'
+`;
 
     await sql.query(updateQuery);
     return res
