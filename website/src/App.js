@@ -31,7 +31,6 @@ function App() {
       ? process.env.REACT_APP_PROD_BACKEND_URL
       : "http://localhost:8250";
 
-
   useEffect(() => {
     try {
       const fetchTop100 = async () => {
@@ -78,6 +77,11 @@ function App() {
 
       if (res?.status === 403) {
         setResetMessage(`Username or password is wrong!`);
+        return;
+      }
+
+      if (res?.status === 401) {
+        setResetMessage(`Character has to be level 400!`);
         return;
       }
 
@@ -431,17 +435,49 @@ function App() {
             <h2 className="text-3xl font-bold text-yellow-500 mb-8">
               Top 100 Players
             </h2>
-            <div className="bg-gray-800 w-full rounded-lg p-6 shadow-lg flex flex-col items-center text-white">
-              <div className="flex flex-col items-center">
-                {top100 &&
-                  top100.map((player) => {
-                    return (
-                      <p className="text-left">
-                        Name: {player.Name}| Level: {player.cLevel} | Resets:
-                        {player.RESETS} |
-                      </p>
-                    );
-                  })}
+            <div className="w-full justify-center rounded-lg p-6 shadow-lg flex flex-col items-center text-white">
+              <div
+                style={{ maxWidth: "600px" }}
+                className="flex w-full flex-col items-center border rounded-lg border-blue-500"
+              >
+                {top100 && (
+                  <table className="table-auto w-full border-collapse border border-blue-500 rounded-lg overflow-hidden">
+                    <thead className="bg-gray-800 text-blue-300">
+                      <tr>
+                        <th className="border border-blue-500 px-4 py-2 text-center">
+                          Name
+                        </th>
+                        <th className="border border-blue-500 px-4 py-2 text-center">
+                          Level
+                        </th>
+                        <th className="border border-blue-500 px-4 py-2 text-center">
+                          Resets
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {top100 &&
+                        top100.map((player, index) => (
+                          <tr
+                            key={index}
+                            className={`${
+                              index % 2 === 0 ? "bg-gray-800" : "bg-gray-700"
+                            } hover:bg-gray-600 transition-all`}
+                          >
+                            <td className="border border-blue-500 px-4 py-2">
+                              {player.Name}
+                            </td>
+                            <td className="border border-blue-500 px-4 py-2 text-center">
+                              {player.cLevel}
+                            </td>
+                            <td className="border border-blue-500 px-4 py-2 text-center">
+                              {player.RESETS}
+                            </td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                )}
               </div>
             </div>
           </div>
@@ -454,6 +490,24 @@ function App() {
               Server News & Info
             </h2>
             <div className="space-y-6">
+              <div className="bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center">
+                <h3 className="text-2xl font-semibold">Installation</h3>
+                <ul className="mt-2 text-left ">
+                  <li>1. Download Mu online Client</li>
+                  <li>2. Extract files</li>
+                  <li>
+                    3. Install all from Visual-C-Runtimes-All-in-One-May-2024
+                    folder "install_all.bat" - double click!
+                  </li>
+                  <li>
+                    4. Set resolution - download & use{" "}
+                    <a className="text-blue-600" href="https://mega.nz/file/7u5jVILD#ENl7e0IphK3bUIp4ENcTSXW0N3rtfv4sEJKiZ6CROfg">
+                      Mu screen resolution settings program
+                    </a>
+                  </li>
+                  <li>5. Click on main.exe Start the game!</li>
+                </ul>
+              </div>
               <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-semibold">
                   Latest Update: Season 6 Released!
@@ -466,8 +520,8 @@ function App() {
               <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-semibold">Server Info</h3>
                 <p className="mt-2">
-                  Experience Rate: Medium | Drop Rate: 70% | Max Level: 400 |
-                  Max Resets: 100 | Season 6
+                  Experience Rate: 5000x | Drop Rate: 70% | Max Level: 400 | Max
+                  Resets: 100 | Season 6 IGC
                 </p>
               </div>
             </div>
@@ -481,12 +535,12 @@ function App() {
               Contact Us
             </h2>
             <p className="text-gray-400">
-              For any inquiries, please contact us at:
+              For any inquiries, please contact us at:{" "}
               <a
-                href="mailto:admin@admin.com"
+                href="https://discord.gg/3VMaV6zy"
                 className="text-blue-500 hover:underline"
               >
-                admin@admin.com
+                Discord - Moonwell Mu
               </a>
             </p>
           </div>

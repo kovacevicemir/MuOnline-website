@@ -2,6 +2,7 @@ const express = require("express");
 const sql = require("mssql");
 var cors = require("cors");
 require("dotenv").config();
+const { sanitizeInput, validateEmail } = require('./helpers');
 
 const dbConfig = {
   user: process.env.DB_USER,
@@ -31,12 +32,14 @@ app.post("/register", async (req, res) => {
   try {
     await sql.connect(dbConfig);
     let { username, password, email } = req.body;
-    username = username.trim();
-    password = password.trim();
+    username = sanitizeInput(username, { maxLength: 20, allowedChars: /^[a-zA-Z0-9_]+$/ });
+    password = sanitizeInput(password, { maxLength: 50 });
     email = email.trim();
     // add more sanitize
 
-    console.log("Register - REQ BODY: ", req.body);
+    if (!validateEmail(email, 100)) {
+      return res.status(400).json({ error: 'Invalid email address' });
+    }
 
     const emailOrUsernameQueryForm = `SELECT * FROM MuOnline.dbo.MEMB_INFO WHERE mail_addr = '${email}' OR memb___id = '${username}' `;
     const result = await sql.query(emailOrUsernameQueryForm);
@@ -67,9 +70,15 @@ app.post("/reset", async (req, res) => {
   try {
     await sql.connect(dbConfig);
     let { username, nickname, password } = req.body;
-    username = username.trim();
-    nickname = nickname.trim();
-    password = password.trim();
+    username = sanitizeInput(username, {
+      maxLength: 20,
+      allowedChars: /^[a-zA-Z0-9_]+$/,
+    }); // Allow alphanumeric + underscore
+    nickname = sanitizeInput(nickname, {
+      maxLength: 20,
+      allowedChars: /^[a-zA-Z0-9_]+$/,
+    }); // Same for nickname
+    password = sanitizeInput(password, { maxLength: 50 }); // Passwords can have more flexibility, only limit length
     // add more sanitize
 
     console.log("Reset - REQ BODY: ", req.body);
@@ -77,13 +86,19 @@ app.post("/reset", async (req, res) => {
     const usernameAndPasswordQuery = `SELECT * FROM MuOnline.dbo.MEMB_INFO WHERE memb___id = '${username}' AND memb__pwd = '${password}'`;
     const result = await sql.query(usernameAndPasswordQuery);
 
-    console.log("RESULT: ", result?.recordset?.[0]);
-
     if (
       result?.recordset?.[0] === undefined ||
       result?.recordset?.[0] === null
     ) {
       return res.status(403).send("User does not exist - Wrong password?");
+    }
+
+    //Check for level
+    const getLevelQuery = `SELECT * FROM MuOnline.dbo.Character WHERE AccountID = '${username}'`;
+    const userLvL = await sql.query(getLevelQuery);
+
+    if (userLvL !== 400) {
+      return res.status(401).send("Character not level 400!");
     }
 
     // Update the existing record by incrementing RESETS and setting cLevel to 1
@@ -107,11 +122,6 @@ app.post("/reset", async (req, res) => {
 
 app.get("/ranking", async (req, res) => {
   try {
-    console.log(
-      process.env.DB_USER,
-      process.env.DB_PASSWORD,
-      process.env.DB_NAME
-    );
     await sql.connect(dbConfig);
 
     const formQuery = `SELECT TOP 100 *
