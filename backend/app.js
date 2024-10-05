@@ -95,9 +95,9 @@ app.post("/reset", async (req, res) => {
 
     //Check for level
     const getLevelQuery = `SELECT * FROM MuOnline.dbo.Character WHERE AccountID = '${username}'`;
-    const userLvL = await sql.query(getLevelQuery);
+    const lvlQueryRes = await sql.query(getLevelQuery);
 
-    if (userLvL !== 400) {
+    if (lvlQueryRes?.recordset?.[0].cLevel !== 400) {
       return res.status(401).send("Character not level 400!");
     }
 
