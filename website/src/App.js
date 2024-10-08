@@ -215,12 +215,11 @@ function App() {
             <strong
               style={{
                 color: "yellowgreen",
-                fontSize: "20px",
                 fontFamily: "monospace",
                 textShadow: "1px 1px black",
                 backgroundColor: "white",
               }}
-              className="mt-12 rounded-md px-3"
+              className="mt-12 rounded-md px-3 sm:text-lg"
             >
               Official opening - 2. November 2025
             </strong>
