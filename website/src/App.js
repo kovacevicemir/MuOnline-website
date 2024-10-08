@@ -2,6 +2,7 @@ import "./App.css";
 import jumboImage from "./jumboimage.jpg";
 import { useEffect, useState } from "react";
 import SimpleCaptcha from "./Captcha";
+import EmbeddedVideo from "./EmbeddedVideo";
 
 const validateEmail = (email) => {
   return String(email)
@@ -114,6 +115,8 @@ function App() {
         return "Soul Master";
       case 16:
         return "Dark Knight";
+      case 17:
+        return "Blade Knight";
       case 18:
         return "Blade Master";
       case 48:
@@ -180,7 +183,7 @@ function App() {
 
       if (res?.status === 200) {
         setRegistrationMessage(
-          `Your is account is created! 
+          `Your account is created! 
   Username: ${registrationDetails.username}
   Password: ${registrationDetails.password}`
         );
@@ -237,6 +240,8 @@ function App() {
             </strong>
           </div>
         </section>
+
+        <EmbeddedVideo />
 
         <section id="register" className="py-16 bg-gray-800">
           <div className="max-w-7xl mx-auto px-6">
