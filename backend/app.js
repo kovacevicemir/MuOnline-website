@@ -1,8 +1,10 @@
 const express = require("express");
+const rateLimit = require("express-rate-limit");
+const helmet = require("helmet");
 const sql = require("mssql");
 var cors = require("cors");
 require("dotenv").config();
-const { sanitizeInput, validateEmail } = require('./helpers');
+const { sanitizeInput, validateEmail } = require("./helpers");
 
 const dbConfig = {
   user: process.env.DB_USER,
@@ -22,23 +24,46 @@ app.use(express.json());
 app.use(cors());
 app.options("*", cors());
 
+// Use Helmet for basic security protections
+app.use(helmet());
+
+// Define rate limit: max 100 requests per IP per 15 minutes
+const generalRateLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: "Too many requests from this IP, please try again after 15 minutes",
+});
+
+// Specific rate limiter for sensitive endpoints (e.g., /register)
+const registerRateLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10, // limit each IP to 10 requests per windowMs for /register
+  message: "Too many registration attempts, please try again later.",
+});
+
+// Apply general rate limiter to all routes
+app.use(generalRateLimiter);
+
 const port = 8250;
 
-app.get("/health", async (req, res) => {
+app.get("/health", registerRateLimiter, async (req, res) => {
   res.send("It is ok!");
 });
 
-app.post("/register", async (req, res) => {
+app.post("/register", registerRateLimiter, async (req, res) => {
   try {
     await sql.connect(dbConfig);
     let { username, password, email } = req.body;
-    username = sanitizeInput(username, { maxLength: 20, allowedChars: /^[a-zA-Z0-9_]+$/ });
+    username = sanitizeInput(username, {
+      maxLength: 20,
+      allowedChars: /^[a-zA-Z0-9_]+$/,
+    });
     password = sanitizeInput(password, { maxLength: 50 });
     email = email.trim();
     // add more sanitize
 
     if (!validateEmail(email, 100)) {
-      return res.status(400).json({ error: 'Invalid email address' });
+      return res.status(400).json({ error: "Invalid email address" });
     }
 
     const emailOrUsernameQueryForm = `SELECT * FROM MuOnline.dbo.MEMB_INFO WHERE mail_addr = '${email}' OR memb___id = '${username}' `;
@@ -124,14 +149,17 @@ app.get("/ranking", async (req, res) => {
   try {
     await sql.connect(dbConfig);
 
-    const formQuery = `SELECT TOP 100 *
-FROM MuOnline.dbo.Character
-ORDER BY RESETS DESC, cLevel DESC;`;
+    const formQuery = `
+  SELECT TOP 100 cLevel, Class, Experience, RESETS, Name
+  FROM MuOnline.dbo.Character
+  ORDER BY RESETS DESC, cLevel DESC;
+`;
 
     const result = await sql.query(formQuery);
 
     const normalizeResult = result?.recordset.map((row) => {
-      return ({ cLevel, Class, Experience, Reset, Name } = row);
+      const { cLevel, Class, Experience, RESETS, Name } = row;
+      return { cLevel, Class, Experience, RESETS, Name };
     });
 
     res.setHeader("Content-Type", "application/json");

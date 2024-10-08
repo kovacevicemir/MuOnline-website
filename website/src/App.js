@@ -1,6 +1,7 @@
 import "./App.css";
 import jumboImage from "./jumboimage.jpg";
 import { useEffect, useState } from "react";
+import SimpleCaptcha from "./Captcha";
 
 const validateEmail = (email) => {
   return String(email)
@@ -18,13 +19,15 @@ function App() {
   });
   const [registrationMessage, setRegistrationMessage] = useState("");
 
-  const [resetDetails, setResetDetails] = useState({
-    username: "",
-    nickname: "",
-    password: "",
-  });
-  const [resetMessage, setResetMessage] = useState("");
+  // const [resetDetails, setResetDetails] = useState({
+  //   username: "",
+  //   nickname: "",
+  //   password: "",
+  // });
+  // const [resetMessage, setResetMessage] = useState("");
   const [top100, setTop100] = useState([]);
+
+  const [isCaptchaOk, setIsCaptchaOk] = useState(false);
 
   const backendURL =
     process.env.REACT_APP_IS_PROD === "YES"
@@ -50,58 +53,76 @@ function App() {
     }
   }, []);
 
-  const handleReset = async () => {
-    if (resetDetails?.username === "" || resetDetails?.username === undefined) {
-      alert("username cant be empty");
-      return;
-    }
+  // const handleReset = async () => {
+  //   if (resetDetails?.username === "" || resetDetails?.username === undefined) {
+  //     alert("username cant be empty");
+  //     return;
+  //   }
 
-    if (resetDetails?.password === "" || resetDetails?.password === undefined) {
-      alert("password cant be empty");
-      return;
-    }
+  //   if (resetDetails?.password === "" || resetDetails?.password === undefined) {
+  //     alert("password cant be empty");
+  //     return;
+  //   }
 
-    if (resetDetails?.nickname === "" || resetDetails?.nickname === undefined) {
-      alert("nickname cant be empty");
-      return;
-    }
+  //   if (resetDetails?.nickname === "" || resetDetails?.nickname === undefined) {
+  //     alert("nickname cant be empty");
+  //     return;
+  //   }
 
-    const { username, password, nickname } = resetDetails;
+  //   const { username, password, nickname } = resetDetails;
 
-    try {
-      const res = await fetch(`${backendURL}/reset`, {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, nickname, password }),
-      });
+  //   try {
+  //     const res = await fetch(`${backendURL}/reset`, {
+  //       method: "post",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({ username, nickname, password }),
+  //     });
 
-      if (res?.status === 403) {
-        setResetMessage(`Username or password is wrong!`);
-        return;
-      }
+  //     if (res?.status === 403) {
+  //       setResetMessage(`Username or password is wrong!`);
+  //       return;
+  //     }
 
-      if (res?.status === 401) {
-        setResetMessage(`Character has to be level 400!`);
-        return;
-      }
+  //     if (res?.status === 401) {
+  //       setResetMessage(`Character has to be level 400!`);
+  //       return;
+  //     }
 
-      if (res?.status === 200) {
-        setResetMessage(
-          `+1 Reset successfully 
-  Username: ${resetDetails.username}`
-        );
+  //     if (res?.status === 200) {
+  //       setResetMessage(
+  //         `+1 Reset successfully
+  // Username: ${resetDetails.username}`
+  //       );
 
-        return;
-      }
+  //       return;
+  //     }
 
-      setResetMessage(`Something went wrong!
-      Please refresh the page and try again! ${res.status}`);
-    } catch (error) {
-      console.log(error);
+  //     setResetMessage(`Something went wrong!
+  //     Please refresh the page and try again! ${res.status}`);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const normalizeClassName = (classNo) => {
+    switch (classNo) {
+      case 0:
+        return "Dark Wizard";
+      case 16:
+        return "Dark Knight";
+      case 18:
+        return "Blade Master";
+
+      default:
+        return classNo;
     }
   };
 
   const registerHandler = async () => {
+    if (isCaptchaOk === false) {
+      alert("Enter correct captcha!");
+    }
+
     if (validateEmail(registrationDetails?.email) === null) {
       alert("Wrong email format!");
       return;
@@ -170,13 +191,16 @@ function App() {
           className="relative contain bg-cover bg-no-repeat bg-center h-[300px] sm:h-[800px] w-[100vw]"
           style={{
             backgroundImage: `url(${jumboImage})`,
-            backgroundSize: "contain",
+            backgroundSize: "",
             backgroundPosition: "center",
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="relative z-10 flex flex-col justify-center items-center h-full">
-            <h1 className="text-lg sm:text-xl xl:text-4xl font-bold text-yellow-500">
+            <h1
+              className="text-lg sm:text-3xl xl:text-4xl font-bold text-yellow-500"
+              style={{ textShadow: "1px 1px black" }}
+            >
               Mu Online Moonwell - Season 6 Server!
             </h1>
             <p className="text-lg mt-4">
@@ -188,6 +212,18 @@ function App() {
             >
               Register Now
             </a>
+            <strong
+              style={{
+                color: "yellowgreen",
+                fontSize: "20px",
+                fontFamily: "monospace",
+                textShadow: "1px 1px black",
+                backgroundColor: "white",
+              }}
+              className="mt-12 rounded-md px-3"
+            >
+              Official opening - 2. November 2025
+            </strong>
           </div>
         </section>
 
@@ -277,19 +313,7 @@ function App() {
                       />
                     </div>
                     <div>
-                      <label
-                        for="captcha"
-                        className="block mb-2 text-sm text-white"
-                      >
-                        Captcha (Coming Soon)
-                      </label>
-                      <input
-                        type="text"
-                        id="captcha"
-                        className="w-full p-3 border border-gray-600 rounded bg-gray-900 text-gray-400"
-                        disabled
-                        placeholder="Captcha here"
-                      />
+                      <SimpleCaptcha setIsCaptchaOk={setIsCaptchaOk} />
                     </div>
                     <button
                       onClick={() => registerHandler()}
@@ -302,7 +326,7 @@ function App() {
                 </div>
               )}
 
-              {/* <!-- Reset Character Section --> */}
+              {/* <!-- Reset Character Section -->
               {resetMessage && (
                 <pre className="whitespace-break-spaces text-orange-300 text-md font-semibold">
                   {resetMessage}
@@ -406,26 +430,51 @@ function App() {
                     </button>
                   </div>
                 </div>
-              )}
+              )} */}
+              {/* <!-- Download Section --> */}
+              <section id="download" className="pb-16">
+                <div className="max-w-3xl mx-auto text-center">
+                  <div className="shadow-md rounded-md py-6">
+                    <h2 className="text-3xl font-bold text-yellow-500 mb-8">
+                      Download the Game
+                    </h2>
+                    <a
+                      href="#"
+                      className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl rounded-full"
+                    >
+                      Download Mu Online Client
+                    </a>
+                    <p className="my-10 text-gray-400">
+                      Please ensure you have the latest version of the game.
+                    </p>
+                  </div>
+                  <div className="p-6 mt-10 rounded-lg shadow-md flex flex-col items-center">
+                    <h3 className="text-2xl font-semibold mb-4">
+                      Installation
+                    </h3>
+                    <ul className="mt-2 text-left ">
+                      <li>1. Download Mu online Client</li>
+                      <li>2. Extract files</li>
+                      <li>
+                        3. Install all from
+                        Visual-C-Runtimes-All-in-One-May-2024 folder
+                        "install_all.bat" - double click!
+                      </li>
+                      <li>
+                        4. Set resolution - download & use{" "}
+                        <a
+                          className="text-blue-600"
+                          href="https://mega.nz/file/7u5jVILD#ENl7e0IphK3bUIp4ENcTSXW0N3rtfv4sEJKiZ6CROfg"
+                        >
+                          Mu screen resolution settings program
+                        </a>
+                      </li>
+                      <li>5. Click on main.exe Start the game!</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
             </div>
-          </div>
-        </section>
-
-        {/* <!-- Download Section --> */}
-        <section id="download" className="py-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-yellow-500 mb-8">
-              Download the Game
-            </h2>
-            <a
-              href="#"
-              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl rounded-full"
-            >
-              Download Mu Online Client
-            </a>
-            <p className="mt-4 text-gray-400">
-              Please ensure you have the latest version of the game.
-            </p>
           </div>
         </section>
 
@@ -453,6 +502,9 @@ function App() {
                         <th className="border border-blue-500 px-4 py-2 text-center">
                           Resets
                         </th>
+                        <th className="border border-blue-500 px-4 py-2 text-center">
+                          Class
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -473,6 +525,9 @@ function App() {
                             <td className="border border-blue-500 px-4 py-2 text-center">
                               {player.RESETS}
                             </td>
+                            <td className="border border-blue-500 px-4 py-2 text-center">
+                              {normalizeClassName(player.Class)}
+                            </td>
                           </tr>
                         ))}
                     </tbody>
@@ -485,44 +540,35 @@ function App() {
 
         {/* <!-- News Section --> */}
         <section className="py-16 bg-gray-800">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto px-2">
             <h2 className="text-3xl font-bold text-yellow-500 text-center mb-8">
               Server News & Info
             </h2>
-            <div className="space-y-6">
-              <div className="bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center">
-                <h3 className="text-2xl font-semibold">Installation</h3>
-                <ul className="mt-2 text-left ">
-                  <li>1. Download Mu online Client</li>
-                  <li>2. Extract files</li>
-                  <li>
-                    3. Install all from Visual-C-Runtimes-All-in-One-May-2024
-                    folder "install_all.bat" - double click!
-                  </li>
-                  <li>
-                    4. Set resolution - download & use{" "}
-                    <a className="text-blue-600" href="https://mega.nz/file/7u5jVILD#ENl7e0IphK3bUIp4ENcTSXW0N3rtfv4sEJKiZ6CROfg">
-                      Mu screen resolution settings program
-                    </a>
-                  </li>
-                  <li>5. Click on main.exe Start the game!</li>
+            <div className="space-y sm:flex gap-4 justify-center">
+              <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg">
+                <h3 className="text-2xl font-semibold">Server Info</h3>
+                <ul className="mt-2 flex items-center flex-col">
+                  <div className="text-left ml-10 min-w-[165px]">
+                    <li>Experience Rate: 10x &#10003;</li>
+                    <li> Max Level: 400 &#10003;</li>
+                    <li>Season 6 IGC &#10003;</li>
+                    <li>No donations &#10003;</li>
+                    <li>No shops &#10003;</li>
+                    <li>RMT available &#10003;</li>
+                  </div>
                 </ul>
               </div>
-              <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+              <div className="bg-gray-700 p-6 rounded-lg shadow-lg sm:flex flex-col justify-center mt-5 sm:mt-0 ">
                 <h3 className="text-2xl font-semibold">
                   Latest Update: Season 6 Released!
                 </h3>
-                <p className="mt-2">
+                <p className="mt-2 mb-4">
                   We are excited to announce the release of Season 6! Classic
                   maps, events, and equipment are now available.
                 </p>
-              </div>
-              <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-semibold">Server Info</h3>
-                <p className="mt-2">
-                  Experience Rate: 5000x | Drop Rate: 70% | Max Level: 400 | Max
-                  Resets: 100 | Season 6 IGC
-                </p>
+                <strong style={{ color: "yellowgreen" }}>
+                  LAUNCH DATE: 2.November 2025
+                </strong>
               </div>
             </div>
           </div>
