@@ -108,10 +108,22 @@ function App() {
     switch (classNo) {
       case 0:
         return "Dark Wizard";
+      case 1:
+        return "Dark Wizard";
+      case 2:
+        return "Soul Master";
       case 16:
         return "Dark Knight";
       case 18:
         return "Blade Master";
+      case 48:
+        return "Magic Gladiator";
+      case 64:
+        return "Dark Lord";
+      case 32:
+        return "Elf";
+      case 96:
+        return "Rage fighter";
 
       default:
         return classNo;
