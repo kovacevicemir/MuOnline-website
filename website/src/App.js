@@ -515,9 +515,9 @@ function App() {
                         <th className="border border-blue-500 px-4 py-2 text-center">
                           Level
                         </th>
-                        <th className="border border-blue-500 px-4 py-2 text-center">
+                        {/* <th className="border border-blue-500 px-4 py-2 text-center">
                           Resets
-                        </th>
+                        </th> */}
                         <th className="border border-blue-500 px-4 py-2 text-center">
                           Class
                         </th>
@@ -533,14 +533,14 @@ function App() {
                             } hover:bg-gray-600 transition-all`}
                           >
                             <td className="border border-blue-500 px-4 py-2">
-                              {player.Name}
+                              {`[${index}]`} {player.Name}
                             </td>
                             <td className="border border-blue-500 px-4 py-2 text-center">
                               {player.cLevel}
                             </td>
-                            <td className="border border-blue-500 px-4 py-2 text-center">
+                            {/* <td className="border border-blue-500 px-4 py-2 text-center">
                               {player.RESETS}
-                            </td>
+                            </td> */}
                             <td className="border border-blue-500 px-4 py-2 text-center">
                               {normalizeClassName(player.Class)}
                             </td>
