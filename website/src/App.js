@@ -533,7 +533,7 @@ function App() {
                             } hover:bg-gray-600 transition-all`}
                           >
                             <td className="border border-blue-500 px-4 py-2 flex">
-                              <div style={{width:'10px'}}>{`[${index+1}]`}</div> {player.Name}
+                              <div style={{width:'10px', marginRight:"15px"}}>{`[${index+1}]`}</div> {player.Name}
                             </td>
                             <td className="border border-blue-500 px-4 py-2 text-center">
                               {player.cLevel}
