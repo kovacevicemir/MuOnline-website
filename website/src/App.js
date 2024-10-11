@@ -30,6 +30,18 @@ function App() {
 
   const [isCaptchaOk, setIsCaptchaOk] = useState(false);
 
+  const isMedal = (index) => {
+    if (index === 1) {
+      return <>🥇</>;
+    }
+    if (index === 2) {
+      return <>&#129352;</>;
+    }
+    if (index === 3) {
+      return <>&#129353;</>;
+    }
+  };
+
   const backendURL =
     process.env.REACT_APP_IS_PROD === "YES"
       ? process.env.REACT_APP_PROD_BACKEND_URL
@@ -455,7 +467,8 @@ function App() {
                       Download the Game
                     </h2>
                     <a
-                      href="https://mega.nz/file/2nBihQ6Z#p1LfL0_msTKRi_WHC9CwzBEOUkHrGMU9UyOrfHxumVs" target="_blank"
+                      href="https://mega.nz/file/2nBihQ6Z#p1LfL0_msTKRi_WHC9CwzBEOUkHrGMU9UyOrfHxumVs"
+                      target="_blank"
                       className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl rounded-full"
                     >
                       Download Mu Online Client
@@ -533,7 +546,12 @@ function App() {
                             } hover:bg-gray-600 transition-all`}
                           >
                             <td className="border border-blue-500 px-4 py-2 flex">
-                              <div style={{width:'10px', marginRight:"15px"}}>{`[${index+1}]`}</div> <span className="ml-2">{player.Name}</span>
+                              <div
+                                style={{ width: "10px", marginRight: "15px" }}
+                              >{`[${index + 1}]`}</div>{" "}
+                              <span className="ml-2">
+                                {player.Name} {isMedal(index + 1)}
+                              </span>
                             </td>
                             <td className="border border-blue-500 px-4 py-2 text-center">
                               {player.cLevel}
@@ -600,6 +618,7 @@ function App() {
               For any inquiries, please contact us at:{" "}
               <a
                 href="https://discord.gg/3VMaV6zy"
+                target="_blank"
                 className="text-blue-500 hover:underline"
               >
                 Discord - Moonwell Mu
