@@ -139,6 +139,12 @@ function App() {
         return "Elf";
       case 96:
         return "Rage fighter";
+      case 80:
+        return "Summoner";
+      case 81:
+        return "Bloody Summoner";
+      case 98:
+        return "Grand Master";
 
       default:
         return classNo;
@@ -543,9 +549,9 @@ function App() {
                             key={index}
                             className={`${
                               index % 2 === 0 ? "bg-gray-800" : "bg-gray-700"
-                            } hover:bg-gray-600 transition-all`}
+                            } hover:bg-gray-600 transition-all border border-blue-500`}
                           >
-                            <td className=" px-4 py-2 flex">
+                            <td className=" px-4 py-2 flex mt-2 sm:mt:0">
                               <div
                                 style={{ width: "10px", marginRight: "15px" }}
                               >{`[${index + 1}]`}</div>{" "}
