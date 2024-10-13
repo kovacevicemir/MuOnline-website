@@ -522,7 +522,7 @@ function App() {
                   <table className="table-auto w-full border-collapse border border-blue-500 rounded-lg overflow-hidden">
                     <thead className="bg-gray-800 text-blue-300">
                       <tr>
-                        <th className="border border-blue-500 px-4 py-2 text-center">
+                        <th className="px-4 py-2 text-center">
                           Name
                         </th>
                         <th className="border border-blue-500 px-4 py-2 text-center">
