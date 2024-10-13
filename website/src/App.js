@@ -252,7 +252,7 @@ function App() {
                 textShadow: "1px 1px black",
                 backgroundColor: "white",
               }}
-              className="mt-12 rounded-md px-3 sm:text-lg"
+              className="mt-12 rounded-md px-3 sm:text-md"
             >
               Official opening - 18. October (7pm GMT+8) 2025
             </strong>
