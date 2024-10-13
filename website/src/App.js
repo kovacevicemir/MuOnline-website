@@ -545,7 +545,7 @@ function App() {
                               index % 2 === 0 ? "bg-gray-800" : "bg-gray-700"
                             } hover:bg-gray-600 transition-all`}
                           >
-                            <td className="border border-blue-500 px-4 py-2 flex">
+                            <td className=" px-4 py-2 flex">
                               <div
                                 style={{ width: "10px", marginRight: "15px" }}
                               >{`[${index + 1}]`}</div>{" "}
