@@ -287,7 +287,7 @@ function App() {
                       <input className="hidden" type="text" name="email" />
 
                       <input
-                        maxLength={20}
+                        maxLength={35}
                         type="email"
                         id="email"
                         className="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
