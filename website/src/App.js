@@ -287,7 +287,7 @@ function App() {
                       <input className="hidden" type="text" name="email" />
 
                       <input
-                        max={20}
+                        maxLength={20}
                         type="email"
                         id="email"
                         className="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
@@ -312,7 +312,7 @@ function App() {
                       <input className="hidden" type="text" name="username" />
 
                       <input
-                        max={16}
+                        maxLength={16}
                         autoComplete="new-password"
                         type="text"
                         className="w-full p-3 border border-gray-600 rounded bg-gray-900 text-white"
@@ -334,7 +334,7 @@ function App() {
                         Password
                       </label>
                       <input
-                        max={16}
+                        maxLength={16}
                         autoComplete="new-password"
                         type="password"
                         id="password"
