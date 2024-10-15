@@ -82,13 +82,6 @@ VALUES
 
     await sql.query(formQuery);
 
-    const unlockRfAndSummonerQuery = `
-      UPDATE MuOnline.dbo.AccountCharacter
-      SET Summoner = 1, RageFighter = 1
-      WHERE Id = '${username}';
-    `;
-    await sql.query(unlockRfAndSummonerQuery);
-
     return res.status(200).send("Account registered successfully!");
   } catch (err) {
     console.log("err: ", err);
