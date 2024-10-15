@@ -154,6 +154,7 @@ function App() {
   const registerHandler = async () => {
     if (isCaptchaOk === false) {
       alert("Enter correct captcha!");
+      return;
     }
 
     if (validateEmail(registrationDetails?.email) === null) {
