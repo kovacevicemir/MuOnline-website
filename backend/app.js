@@ -84,7 +84,7 @@ VALUES
 
     const unlockRfAndSummonerQuery = `
       UPDATE MuOnline.dbo.AccountCharacter
-      SET Summoner = 1, Rage = 1
+      SET Summoner = 1, RageFighter = 1
       WHERE Id = '${username}';
     `;
     await sql.query(unlockRfAndSummonerQuery);
