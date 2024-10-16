@@ -627,11 +627,11 @@ function App() {
             <p className="text-gray-400">
               For any inquiries, please contact us at:{" "}
               <a
-                href="https://discord.gg/3VMaV6zy"
+                href="https://www.facebook.com/groups/1022381109629604"
                 target="_blank"
                 className="text-blue-500 hover:underline"
               >
-                Discord - Moonwell Mu
+                MU Moonwell 2024 - Facebook
               </a>
             </p>
           </div>
