@@ -255,7 +255,7 @@ function App() {
               }}
               className="mt-12 rounded-md px-3 sm:text-md"
             >
-              Official opening - 18. October (7pm GMT+8) 2025
+              Official opening - 18. October (7pm GMT+8) 2024
             </strong>
           </div>
         </section>
@@ -611,7 +611,7 @@ function App() {
                   maps, events, and equipment are now available.
                 </p>
                 <strong style={{ color: "yellowgreen" }}>
-                  LAUNCH DATE: 18. October (7pm GMT+8) 2025
+                  LAUNCH DATE: 18. October (7pm GMT+8) 2024
                 </strong>
               </div>
             </div>
