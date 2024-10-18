@@ -223,7 +223,7 @@ function App() {
 
   return (
     <div className="App flex justify-center bg-black">
-      <body className="bg-gray-900 text-white"  style={{maxWidth:"1600px", overflow:"hidden"}}>
+      <body className="bg-gray-600 text-white"  style={{maxWidth:"1600px", overflow:"hidden"}}>
         {/* <!-- Jumbotron --> */}
         <section
           className="relative contain bg-cover bg-no-repeat bg-center h-[300px] sm:h-[800px] w-[100vw]"
