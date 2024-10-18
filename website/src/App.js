@@ -231,6 +231,7 @@ function App() {
             backgroundImage: `url(${jumboImage})`,
             backgroundSize: "",
             backgroundPosition: "center",
+            maxWidth:"1600px"
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
