@@ -135,8 +135,12 @@ function App() {
         return "Magic Gladiator";
       case 64:
         return "Dark Lord";
+      case 66:
+        return "Lord Emperor";
       case 32:
         return "Elf";
+      case 33:
+        return "Muse Elf";
       case 96:
         return "Rage fighter";
       case 80:
@@ -532,9 +536,7 @@ function App() {
                   <table className="table-auto w-full border-collapse border border-blue-500 rounded-lg overflow-hidden">
                     <thead className="bg-gray-800 text-blue-300">
                       <tr>
-                        <th className="px-4 py-2 text-center">
-                          Name
-                        </th>
+                        <th className="px-4 py-2 text-center">Name</th>
                         <th className="border border-blue-500 px-4 py-2 text-center">
                           Level
                         </th>
