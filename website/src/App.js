@@ -222,7 +222,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" style={{maxWidth:"1600px"}}>
       <body className="bg-gray-900 text-white">
         {/* <!-- Jumbotron --> */}
         <section
