@@ -223,7 +223,10 @@ function App() {
 
   return (
     <div className="App flex justify-center bg-gray-700">
-      <body className="bg-gray-900 text-white"  style={{maxWidth:"1600px", overflow:"hidden"}}>
+      <body
+        className="bg-gray-900 text-white"
+        style={{ maxWidth: "1600px", overflow: "hidden" }}
+      >
         {/* <!-- Jumbotron --> */}
         <section
           className="relative contain bg-cover bg-no-repeat bg-center h-[300px] sm:h-[800px] w-[100vw]"
@@ -231,7 +234,7 @@ function App() {
             backgroundImage: `url(${jumboImage})`,
             backgroundSize: "",
             backgroundPosition: "center",
-            maxWidth:"1600px"
+            maxWidth: "1600px",
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -526,7 +529,7 @@ function App() {
         <section id="players" className="py-16">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-yellow-500 mb-8">
-              Top 100 Players
+              Top 30 Players
             </h2>
             <div className="w-full justify-center rounded-lg p-6 shadow-lg flex flex-col items-center text-white">
               <div
@@ -551,7 +554,7 @@ function App() {
                     </thead>
                     <tbody>
                       {top100 &&
-                        top100.map((player, index) => (
+                        top100.slice(0,30).map((player, index) => (
                           <tr
                             key={index}
                             className={`${
@@ -602,6 +605,25 @@ function App() {
                     <li>No donations &#10003;</li>
                     <li>No shops &#10003;</li>
                     <li>RMT available &#10003;</li>
+                  </div>
+                </ul>
+              </div>
+              <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg">
+                <h3 className="text-2xl font-semibold">Server Info</h3>
+                <ul className="mt-2 flex items-center flex-col">
+                  <h4>Donations:</h4>
+                  <div className="text-left ml-10 min-w-[165px]">
+                    100 php = 200 wcoins <br />
+                    200 php = 480 wcoins
+                    <br />
+                    500 php = 1200 wcoins
+                    <br />
+                    1000 php = 2400 wcoins
+                    <br />
+                    1500 php = 3600 wcoins
+                    <br />
+                    2000 php = 4800 wcoins
+                    <br />
                   </div>
                 </ul>
               </div>
