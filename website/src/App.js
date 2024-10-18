@@ -554,7 +554,7 @@ function App() {
                     </thead>
                     <tbody>
                       {top100 &&
-                        top100.slice(0,10).map((player, index) => (
+                        top100.slice(0, 10).map((player, index) => (
                           <tr
                             key={index}
                             className={`${
@@ -594,38 +594,38 @@ function App() {
             <h2 className="text-3xl font-bold text-yellow-500 text-center mb-8">
               Server News & Info
             </h2>
-            <div className="space-y sm:flex gap-4 justify-center">
-              <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-semibold">Server Info</h3>
-                <ul className="mt-2 flex items-center flex-col">
-                  <div className="text-left ml-10 min-w-[165px]">
-                    <li>Experience Rate: 10x &#10003;</li>
-                    <li> Max Level: 400 &#10003;</li>
-                    <li>Season 6 IGC &#10003;</li>
-                    <li>No donations &#10003;</li>
-                    <li>No shops &#10003;</li>
-                    <li>RMT available &#10003;</li>
-                  </div>
-                </ul>
-              </div>
-              <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-semibold">Server Info</h3>
-                <ul className="mt-2 flex items-center flex-col">
-                  <h4>Donations:</h4>
-                  <div className="text-left ml-10 min-w-[165px]">
-                    100 php = 200 wcoins <br />
-                    200 php = 480 wcoins
-                    <br />
-                    500 php = 1200 wcoins
-                    <br />
-                    1000 php = 2400 wcoins
-                    <br />
-                    1500 php = 3600 wcoins
-                    <br />
-                    2000 php = 4800 wcoins
-                    <br />
-                  </div>
-                </ul>
+            <div className="flex flex-row">
+              <div className="space-y sm:flex gap-4 justify-center">
+                <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg">
+                  <h3 className="text-2xl font-semibold">Server Info</h3>
+                  <ul className="mt-2 flex items-center flex-col">
+                    <div className="text-left ml-10 min-w-[165px]">
+                      <li>Experience Rate: 10x &#10003;</li>
+                      <li> Max Level: 400 &#10003;</li>
+                      <li>Season 6 &#10003;</li>
+                      <li>No OP items in shops &#10003;</li>
+                      <li>RMT available &#10003;</li>
+                    </div>
+                  </ul>
+                </div>
+                <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg">
+                  <h3 className="text-2xl font-semibold">Donations</h3>
+                  <ul className="mt-2 flex items-center flex-col">
+                    <div className="text-left ml-10 min-w-[165px]">
+                      100 php = 200 wcoins <br />
+                      200 php = 480 wcoins
+                      <br />
+                      500 php = 1200 wcoins
+                      <br />
+                      1000 php = 2400 wcoins
+                      <br />
+                      1500 php = 3600 wcoins
+                      <br />
+                      2000 php = 4800 wcoins
+                      <br />
+                    </div>
+                  </ul>
+                </div>
               </div>
               <div className="bg-gray-700 p-6 rounded-lg shadow-lg sm:flex flex-col justify-center mt-5 sm:mt-0 ">
                 <h3 className="text-2xl font-semibold">
