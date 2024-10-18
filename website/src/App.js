@@ -529,7 +529,7 @@ function App() {
         <section id="players" className="py-16">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-yellow-500 mb-8">
-              Top 30 Players
+              Top 10 Players
             </h2>
             <div className="w-full justify-center rounded-lg p-6 shadow-lg flex flex-col items-center text-white">
               <div
@@ -554,7 +554,7 @@ function App() {
                     </thead>
                     <tbody>
                       {top100 &&
-                        top100.slice(0,30).map((player, index) => (
+                        top100.slice(0,10).map((player, index) => (
                           <tr
                             key={index}
                             className={`${
