@@ -594,7 +594,7 @@ function App() {
             <h2 className="text-3xl font-bold text-yellow-500 text-center mb-8">
               Server News & Info
             </h2>
-            <div className="flex flex-row">
+            <div className="flex flex-col">
               <div className="space-y sm:flex gap-4 justify-center">
                 <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg">
                   <h3 className="text-2xl font-semibold">Server Info</h3>
@@ -627,7 +627,7 @@ function App() {
                   </ul>
                 </div>
               </div>
-              <div className="bg-gray-700 p-6 rounded-lg shadow-lg sm:flex flex-col justify-center mt-5 sm:mt-0 ">
+              <div className="bg-gray-700 p-6 rounded-lg shadow-lg sm:flex flex-col justify-center mt-5 sm:mt-2 ">
                 <h3 className="text-2xl font-semibold">
                   Latest Update: Season 6 Released!
                 </h3>
