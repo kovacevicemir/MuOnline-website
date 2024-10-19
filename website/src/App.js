@@ -122,7 +122,7 @@ function App() {
       case 0:
         return "Dark Wizard";
       case 1:
-        return "Dark Wizard";
+        return "Soul Master";
       case 2:
         return "Soul Master";
       case 16:
