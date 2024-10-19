@@ -601,10 +601,16 @@ function App() {
                   <ul className="mt-2 flex items-center flex-col">
                     <div className="text-left ml-10 min-w-[165px]">
                       <li>Experience Rate: 10x &#10003;</li>
+                      <li>Experience Rate Master: 10x &#10003;</li>
                       <li> Max Level: 400 &#10003;</li>
                       <li>Season 6 &#10003;</li>
+                      <li>Drop rate 50% - medium &#10003;</li>
                       <li>No OP items in shops &#10003;</li>
                       <li>RMT available &#10003;</li>
+                      <li>Offline leveling &#10003;</li>
+                      <li>Set Party & Party exp bonus &#10003;</li>
+                      <li>Max client 3 &#10003;</li>
+                      <li>Max Item option 2 &#10003;</li>
                     </div>
                   </ul>
                 </div>
