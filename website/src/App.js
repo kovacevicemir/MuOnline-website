@@ -225,7 +225,7 @@ function App() {
     <div className="App flex justify-center bg-gray-700">
       <body
         className="bg-gray-900 text-white"
-        style={{ maxWidth: "1600px", overflow: "hidden" }}
+        style={{ maxWidth: "1920px", overflow: "hidden" }}
       >
         {/* <!-- Jumbotron --> */}
         <section
@@ -234,7 +234,7 @@ function App() {
             backgroundImage: `url(${jumboImage})`,
             backgroundSize: "",
             backgroundPosition: "center",
-            maxWidth: "1600px",
+            maxWidth: "1920px",
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -585,6 +585,13 @@ function App() {
                 )}
               </div>
             </div>
+            <a
+              href="https://www.facebook.com/groups/1022381109629604"
+              target="_blank"
+              className="text-blue-500 hover:underline"
+            >
+              MU Moonwell 2024 - Facebook
+            </a>
           </div>
         </section>
 
@@ -596,7 +603,7 @@ function App() {
             </h2>
             <div className="flex flex-col">
               <div className="space-y sm:flex gap-4 justify-center">
-                <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg">
+                <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg mt-1">
                   <h3 className="text-2xl font-semibold">Server Info</h3>
                   <ul className="mt-2 flex items-center flex-col">
                     <div className="text-left ml-10 min-w-[165px]">
@@ -609,12 +616,12 @@ function App() {
                       <li>RMT available &#10003;</li>
                       <li>Offline leveling &#10003;</li>
                       <li>Set Party & Party exp bonus &#10003;</li>
-                      <li>Max client 3 &#10003;</li>
+                      <li>Max clients 3 &#10003;</li>
                       <li>Max Item option 2 &#10003;</li>
                     </div>
                   </ul>
                 </div>
-                <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg">
+                <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg mt-1">
                   <h3 className="text-2xl font-semibold">Donations</h3>
                   <ul className="mt-2 flex items-center flex-col">
                     <div className="text-left ml-10 min-w-[165px]">
