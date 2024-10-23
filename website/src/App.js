@@ -669,7 +669,7 @@ function App() {
                       ✅ <strong>Version:</strong> Season 6 Episode 3
                     </li>
                     <li>
-                      ✅ <strong>Server Files:</strong> IGC NETWORK
+                      ✅ <strong>Server Files:</strong> IGC Premium
                     </li>
                     <li>
                       ✅ <strong>Hosting:</strong> Premium dedicated VPS
@@ -725,6 +725,9 @@ function App() {
                     <hr class="border-t-2 border-gray-700" />
                     <li>
                       ✅ <strong>Chaos Machine:</strong> Customize
+                    </li>
+                    <li>
+                      ✅ <strong>Free RF & Summoner</strong> 
                     </li>
                     <li>
                       ✅ <strong>Online Reward per hour:</strong> 5
