@@ -182,7 +182,7 @@ const onlineWCoinsRewardQuery = `
 
 function updateWCoinP() {
   sql
-    .query(query)
+    .query(onlineWCoinsRewardQuery)
     .then((result) => {
       console.log("WCoinP updated for active users");
     })
