@@ -548,7 +548,7 @@ function App() {
                       Download the Game
                     </h2>
                     <a
-                      href="https://mega.nz/file/WrASSLqQ#jHY3R0Rl87lRrJ5WNVUzwzO7idbRWwKPUGAffMYhjj8"
+                      href="https://mega.nz/file/jqY1RDCY#GWu8W33UytWyUxOsoWm6ol4SXKgEvF85YrD5w9TPG1k"
                       target="_blank"
                       className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl rounded-full"
                     >
