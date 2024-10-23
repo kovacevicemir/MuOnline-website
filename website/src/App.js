@@ -291,6 +291,7 @@ function App() {
             backgroundSize: "",
             backgroundPosition: "center",
             maxWidth: "1920px",
+            boxShadow:"-1px 19px 20px 1px black"
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
