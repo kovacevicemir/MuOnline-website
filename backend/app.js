@@ -180,7 +180,8 @@ const onlineWCoinsRewardQuery = `
   WHERE ms.ConnectStat = 1;
 `;
 
-function updateWCoinP() {
+const updateWCoinP = async () => {
+  await sql.connect(dbConfig);
   sql
     .query(onlineWCoinsRewardQuery)
     .then((result) => {
@@ -189,7 +190,7 @@ function updateWCoinP() {
     .catch((err) => {
       console.error("Error executing query:", err);
     });
-}
+};
 
 // Execute the function every 1 minute (60000 milliseconds)
 setInterval(updateWCoinP, 60000);
