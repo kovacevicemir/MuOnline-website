@@ -333,7 +333,7 @@ function App() {
 
         <EmbeddedVideo />
 
-        <section id="register" className="py-16 bg-gray-800">
+        <section id="register" className="py-16 bg-gray-800" style={{boxShadow: 'inset 1px 12px 20px black'}}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start justify-center">
               {registrationMessage && (
