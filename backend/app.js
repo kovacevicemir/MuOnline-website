@@ -172,6 +172,28 @@ app.get("/ranking", async (req, res) => {
   }
 });
 
+const onlineWCoinsRewardQuery = `
+  UPDATE dbo.T_InGameShop_Point
+  SET WCoinP = WCoinP + 5
+  FROM dbo.T_InGameShop_Point igsp
+  INNER JOIN dbo.MEMB_STAT ms ON igsp.AccountID = ms.memb___id
+  WHERE ms.ConnectStat = 1;
+`;
+
+function updateWCoinP() {
+  sql
+    .query(query)
+    .then((result) => {
+      console.log("WCoinP updated for active users");
+    })
+    .catch((err) => {
+      console.error("Error executing query:", err);
+    });
+}
+
+// Execute the function every 1 minute (60000 milliseconds)
+setInterval(updateWCoinP, 60000);
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
