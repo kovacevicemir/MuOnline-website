@@ -297,7 +297,7 @@ function App() {
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="relative z-10 flex flex-col justify-center items-center h-full">
             <h1
-              className="text-2xl sm:text-3xl xl:text-4xl font-extrabold text-yellow-400 mt-4 tracking-wide uppercase"
+              className="text-lg sm:text-3xl xl:text-4xl font-extrabold text-yellow-400 mt-4 tracking-wide uppercase"
               style={{
                 textShadow:
                   "2px 2px 4px #000000, 4px 4px 6px rgba(0, 0, 0, 0.8)", // Stronger shadow for a game-like effect
