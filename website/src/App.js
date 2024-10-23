@@ -3,6 +3,7 @@ import jumboImage from "./jumboimage.jpg";
 import { useEffect, useState } from "react";
 import SimpleCaptcha from "./Captcha";
 import EmbeddedVideo from "./EmbeddedVideo";
+import Countdown from "react-countdown";
 
 const validateEmail = (email) => {
   return String(email)
@@ -19,6 +20,7 @@ function App() {
     password: "",
   });
   const [registrationMessage, setRegistrationMessage] = useState("");
+  const targetDate = new Date("2024-10-26T06:00:00+08:00");
 
   // const [resetDetails, setResetDetails] = useState({
   //   username: "",
@@ -221,6 +223,60 @@ function App() {
     }
   };
 
+  const countdownRenderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      return <span>Time's up!</span>; // What to show when the countdown is over
+    } else {
+      return (
+        <div className="flex space-x-2 text-white font-black text-3xl font-[UnifrakturMaguntia] m-4">
+          {/* Days */}
+          <div className="flex flex-col items-center">
+            <div
+              className="bg-gray-800 whitesmoke p-2 w-12 h-12 flex items-center justify-center rounded-md shadow-lg"
+              style={{ border: "4px solid #9999ff" }}
+            >
+              {days}
+            </div>
+            <span className="text-sm whitesmoke mt-1">days</span>
+          </div>
+
+          {/* Hours */}
+          <div className="flex flex-col items-center">
+            <div
+              className="bg-gray-800 whitesmoke p-2 w-12 h-12 flex items-center justify-center rounded-md shadow-lg"
+              style={{ border: "4px solid #9999ff" }}
+            >
+              {hours}
+            </div>
+            <span className="text-sm whitesmoke mt-1">hrs</span>
+          </div>
+
+          {/* Minutes */}
+          <div className="flex flex-col items-center">
+            <div
+              className="bg-gray-800 whitesmoke p-2 w-12 h-12 flex items-center justify-center rounded-md shadow-lg"
+              style={{ border: "4px solid #9999ff" }}
+            >
+              {minutes}
+            </div>
+            <span className="text-sm whitesmoke mt-1">min</span>
+          </div>
+
+          {/* Seconds */}
+          <div className="flex flex-col items-center">
+            <div
+              className="bg-gray-800 whitesmoke p-2 w-12 h-12 flex items-center justify-center rounded-md shadow-lg"
+              style={{ border: "4px solid #9999ff" }}
+            >
+              {seconds}
+            </div>
+            <span className="text-sm whitesmoke mt-1">sec</span>
+          </div>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="App flex justify-center bg-gray-700">
       <body
@@ -229,7 +285,7 @@ function App() {
       >
         {/* <!-- Jumbotron --> */}
         <section
-          className="relative contain bg-cover bg-no-repeat bg-center h-[300px] sm:h-[800px] w-[100vw]"
+          className="relative contain bg-cover bg-no-repeat bg-center h-[100vh] sm:h-[800px] w-[100vw]"
           style={{
             backgroundImage: `url(${jumboImage})`,
             backgroundSize: "",
@@ -240,10 +296,15 @@ function App() {
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="relative z-10 flex flex-col justify-center items-center h-full">
             <h1
-              className="text-lg sm:text-3xl xl:text-4xl font-bold text-yellow-500"
-              style={{ textShadow: "1px 1px black" }}
+              className="text-2xl sm:text-3xl xl:text-4xl font-extrabold text-yellow-400 mt-4 tracking-wide uppercase"
+              style={{
+                textShadow:
+                  "2px 2px 4px #000000, 4px 4px 6px rgba(0, 0, 0, 0.8)", // Stronger shadow for a game-like effect
+                fontFamily: "monospace",
+                letterSpacing: "0.15em", // A bit of space between letters for impact
+              }}
             >
-              Mu Online Moonwell - Season 6 Server!
+              Labyrinth Mu - Season 6!
             </h1>
             <p className="text-lg mt-4">
               Register now and start your adventure.
@@ -256,15 +317,16 @@ function App() {
             </a>
             <strong
               style={{
-                color: "yellowgreen",
-                fontFamily: "monospace",
+                color: "white",
+                fontFamily: "",
                 textShadow: "1px 1px black",
-                backgroundColor: "white",
+                backgroundColor: "#9999ff",
               }}
-              className="mt-12 rounded-md px-3 sm:text-md"
+              className="mt-12 rounded-md px-3 sm:text-md mx-2"
             >
-              Official opening - 18. October (7pm GMT+8) 2024
+              Grand opening - 26. October 6pm (GMT+8) 2024
             </strong>
+            <Countdown date={targetDate} renderer={countdownRenderer} />
           </div>
         </section>
 
@@ -528,7 +590,7 @@ function App() {
         {/* <!-- Top 100 Players Section --> */}
         <section id="players" className="py-16">
           <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-yellow-500 mb-8">
+            <h2 className="text-3xl font-bold text-[#9999ff] mb-4">
               Top 10 Players
             </h2>
             <div className="w-full justify-center rounded-lg p-6 shadow-lg flex flex-col items-center text-white">
@@ -586,11 +648,11 @@ function App() {
               </div>
             </div>
             <a
-              href="https://www.facebook.com/groups/1022381109629604"
+              href="https://www.facebook.com/groups/395882375216868"
               target="_blank"
               className="text-blue-500 hover:underline"
             >
-              MU Moonwell 2024 - Facebook
+              LabyrinthMu 2024 - Facebook
             </a>
           </div>
         </section>
@@ -598,30 +660,115 @@ function App() {
         {/* <!-- News Section --> */}
         <section className="py-16 bg-gray-800">
           <div className="max-w-5xl mx-auto px-2">
-            <h2 className="text-3xl font-bold text-yellow-500 text-center mb-8">
-              Server News & Info
-            </h2>
             <div className="flex flex-col">
               <div className="space-y sm:flex gap-4 justify-center">
                 <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg mt-1">
-                  <h3 className="text-2xl font-semibold">Server Info</h3>
-                  <ul className="mt-2 flex items-center flex-col">
-                    <div className="text-left ml-10 min-w-[165px]">
-                      <li>Experience Rate: 10x &#10003;</li>
-                      <li>Experience Rate Master: 10x &#10003;</li>
-                      <li> Max Level: 400 &#10003;</li>
-                      <li>Season 6 &#10003;</li>
-                      <li>Drop rate 50% - medium &#10003;</li>
-                      <li>No OP items in shops &#10003;</li>
-                      <li>RMT available &#10003;</li>
-                      <li>Offline leveling &#10003;</li>
-                      <li>Set Party & Party exp bonus &#10003;</li>
-                      <li>Max clients 3 &#10003;</li>
-                      <li>Max Item option 2 &#10003;</li>
-                    </div>
+                  <h3 className="text-2xl font-semibold mb-4">Server Info</h3>
+                  <ul class=" pl-6 space-y-2 text-white text-left list-none">
+                    <li>
+                      ✅ <strong>Version:</strong> Season 6 Episode 3
+                    </li>
+                    <li>
+                      ✅ <strong>Server Files:</strong> IGC NETWORK
+                    </li>
+                    <li>
+                      ✅ <strong>Hosting:</strong> Premium dedicated VPS
+                    </li>
+                    <li>
+                      ✅ <strong>Normal Exp:</strong> 200x
+                    </li>
+                    <li>
+                      ✅ <strong>Master Exp:</strong> 100x
+                    </li>
+                    <li>
+                      ✅ <strong>Drop:</strong> 60%
+                    </li>
+                    <li>
+                      ✅ <strong>Top UP Wcoins Ratio:</strong>
+                    </li>
+                    <hr class="border-t-2 border-gray-700" />
+                    <li>
+                      ✅ <strong>Max Level:</strong> 400
+                    </li>
+                    <li>
+                      ✅ <strong>Max Master Level:</strong> 200
+                    </li>
+                    <li>
+                      ✅ <strong>Max Item Level:</strong> +13 (+15 disabled,
+                      coming soon)
+                    </li>
+                    <li>
+                      ✅ <strong>Max Excellent Options:</strong> 2
+                    </li>
+                    <li>
+                      ✅ <strong>Max Socket:</strong> (Disabled, coming soon)
+                    </li>
+                    <li>
+                      ✅ <strong>Normal 380 weapon and Set:</strong> (BOSS DROP
+                      ONLY)
+                    </li>
+                    <li>
+                      ✅ <strong>Normal Ancient Items</strong>
+                    </li>
+                    <li>
+                      ✅ <strong>Excellent Accessories:</strong> 3% opt (HP rec)
+                      | 2opt excellent
+                    </li>
+                    <li>
+                      ✅ <strong>2 opt excellent items:</strong> lootable in Box
+                      of Kundun via Golden Invasion
+                    </li>
+                    <li>
+                      ✅ <strong>Excellent Accessories:</strong> huntable at
+                      Boss Mobs
+                    </li>
+                    <hr class="border-t-2 border-gray-700" />
+                    <li>
+                      ✅ <strong>Chaos Machine:</strong> Customize
+                    </li>
+                    <li>
+                      ✅ <strong>Online Reward per hour:</strong> 5
+                    </li>
+                    <li>
+                      ✅ <strong>Client Limit:</strong> 3 per pc/hwid
+                    </li>
+                    <li>
+                      ✅ <strong>Non Reset</strong>
+                    </li>
+                    <li>
+                      ✅ <strong>Normal Socket Items Max:</strong> 3 slot (once
+                      updated/release)
+                    </li>
+                    <li>
+                      ✅ <strong>Normal 380 set</strong>
+                    </li>
+                    <li>
+                      ✅ <strong>Normal Ancient</strong>
+                    </li>
+                    <li>
+                      💯 <strong>No Item Donation</strong>
+                    </li>
+                    <li>
+                      💯 <strong>Non Bias Admin/GM</strong>
+                    </li>
+                    <li>
+                      💯 <strong>Well Managed Server</strong>
+                    </li>
+                    <li>
+                      💯 <strong>Active Admin/GM</strong>
+                    </li>
+                    <li>
+                      💯 <strong>Weekend Exp Boost</strong>
+                    </li>
+                    <li>
+                      💯 <strong>Cash Prizes Events/CS</strong>
+                    </li>
+                    <li>
+                      ✅ <strong>Open php|RMT</strong>
+                    </li>
                   </ul>
                 </div>
-                <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg mt-1">
+                {/* <div className="bg-gray-700 w-fit p-6 rounded-lg shadow-lg mt-1">
                   <h3 className="text-2xl font-semibold">Donations</h3>
                   <ul className="mt-2 flex items-center flex-col">
                     <div className="text-left ml-10 min-w-[165px]">
@@ -638,18 +785,18 @@ function App() {
                       <br />
                     </div>
                   </ul>
-                </div>
+                </div> */}
               </div>
               <div className="bg-gray-700 p-6 rounded-lg shadow-lg sm:flex flex-col justify-center mt-5 sm:mt-2 ">
                 <h3 className="text-2xl font-semibold">
-                  Latest Update: Season 6 Released!
+                  Latest Update: Season 6 Grand Opening!
                 </h3>
                 <p className="mt-2 mb-4">
                   We are excited to announce the release of Season 6! Classic
                   maps, events, and equipment are now available.
                 </p>
                 <strong style={{ color: "yellowgreen" }}>
-                  LAUNCH DATE: 18. October (7pm GMT+8) 2024
+                  LAUNCH DATE: 26. October (6pm GMT+8) 2024
                 </strong>
               </div>
             </div>
@@ -659,17 +806,17 @@ function App() {
         {/* <!-- Contact Us Section --> */}
         <section className="py-16">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-yellow-500 mb-8">
+            <h2 className="text-3xl font-bold text-[#9999ff] mb-8">
               Contact Us
             </h2>
             <p className="text-gray-400">
               For any inquiries, please contact us at:{" "}
               <a
-                href="https://www.facebook.com/groups/1022381109629604"
+                href="https://www.facebook.com/groups/395882375216868"
                 target="_blank"
                 className="text-blue-500 hover:underline"
               >
-                MU Moonwell 2024 - Facebook
+                Labyrinth Mu 2024 - Facebook
               </a>
             </p>
           </div>
