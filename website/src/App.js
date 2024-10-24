@@ -1,10 +1,10 @@
 import "./App.css";
-import jumboImage from "./jumboimage.jpg";
+import jumboImage from "./jumboimage.webp";
 import { useEffect, useState } from "react";
 import SimpleCaptcha from "./Captcha";
 import EmbeddedVideo from "./EmbeddedVideo";
 import Countdown from "react-countdown";
-import labyrinthmulogo from "./labyrinthmulogo.png"
+import labyrinthmulogo from "./labyrinthmulogo.webp"
 
 const validateEmail = (email) => {
   return String(email)
