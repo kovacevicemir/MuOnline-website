@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import SimpleCaptcha from "./Captcha";
 import EmbeddedVideo from "./EmbeddedVideo";
 import Countdown from "react-countdown";
+import labyrinthmulogo from "./labyrinthmulogo.png"
 
 const validateEmail = (email) => {
   return String(email)
@@ -296,6 +297,7 @@ function App() {
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="relative z-10 flex flex-col justify-center items-center h-full">
+            <img src={labyrinthmulogo} width={420} />
             <h1
               className="text-lg sm:text-3xl xl:text-4xl font-extrabold text-yellow-400 mt-4 tracking-wide uppercase"
               style={{
