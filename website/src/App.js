@@ -327,7 +327,7 @@ function App() {
               }}
               className="mt-12 rounded-md px-3 sm:text-md mx-2"
             >
-              Grand opening - 26. October 6pm (GMT+8) 2024
+              Grand opening - 27. October 7pm (GMT+8) 2024
             </strong>
             <Countdown date={targetDate} renderer={countdownRenderer} />
           </div>
@@ -802,7 +802,7 @@ function App() {
                   maps, events, and equipment are now available.
                 </p>
                 <strong style={{ color: "yellowgreen" }}>
-                  LAUNCH DATE: 26. October (6pm GMT+8) 2024
+                  LAUNCH DATE: 27. October (6pm GMT+8) 2024
                 </strong>
               </div>
             </div>
