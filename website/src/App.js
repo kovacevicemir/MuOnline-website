@@ -430,7 +430,8 @@ function App() {
                       onClick={() => registerHandler()}
                       disabled
                       type="submit"
-                      className="w-full bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg font-semibold"
+                      // className="w-full bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg font-semibold"
+                      style={{backgroundColor:"gray"}}
                     >
                       Register
                     </button>
