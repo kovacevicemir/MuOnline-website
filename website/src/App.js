@@ -736,7 +736,7 @@ function App() {
                       ✅ <strong>Online Reward per hour:</strong> 5
                     </li>
                     <li>
-                      ✅ <strong>Client Limit:</strong> 3 per pc/hwid
+                      ✅ <strong>Client Limit:</strong> 5 per pc/hwid
                     </li>
                     <li>
                       ✅ <strong>Non Reset</strong>
