@@ -426,15 +426,14 @@ function App() {
                     <div>
                       <SimpleCaptcha setIsCaptchaOk={setIsCaptchaOk} />
                     </div>
-                    <button
+                    {/* <button
                       onClick={() => registerHandler()}
                       disabled
                       type="submit"
-                      // className="w-full bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg font-semibold"
-                      style={{backgroundColor:"gray"}}
+                      className="w-full bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg font-semibold"
                     >
                       Register
-                    </button>
+                    </button> */}
                     <span style={{fontStyle:'italic', fontSize:"12px"}}>Registration will be available soon!</span>
                   </div>
                 </div>
