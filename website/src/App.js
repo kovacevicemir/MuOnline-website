@@ -226,7 +226,7 @@ function App() {
 
   const countdownRenderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
-      return <span>Time's up!</span>; // What to show when the countdown is over
+      return <span>Server is open!</span>; // What to show when the countdown is over
     } else {
       return (
         <div className="flex space-x-2 text-white font-black text-3xl font-[UnifrakturMaguntia] m-4">
