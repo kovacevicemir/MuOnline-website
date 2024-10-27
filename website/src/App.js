@@ -566,9 +566,9 @@ function App() {
                     <h3 className="text-2xl font-semibold mb-4">
                       Installation
                     </h3>
-                    <ul className="mt-2 text-left text-sm space-y-[4px]">
+                    <ul className="mt-2 text-left text-sm space-y-[5px]">
                       <li>1. Download Mu online Client & Extract files</li>
-                      <li style={{color:"yellow"}}>
+                      <li style={{color:"yellow"}} className="font-semibold">
                         2. Install all from
                         Visual-C-Runtimes-All-in-One folder<br/>
                         "install_all.bat" - double click!
@@ -583,7 +583,7 @@ function App() {
                       <li>
                         4. Random DC? (Disconnect):
                         <ul>
-                         <li className="ml-1">-Turn off real time protection from windows security settings <a className="text-blue-700" href="https://www.youtube.com/watch?v=o0OTed9c_GQ&ab_channel=MDTechVideos" target="_blank">video tutorial</a></li>
+                         <li className="ml-1">-Turn off real time protection in windows security <a className="text-blue-700" href="https://www.youtube.com/watch?v=o0OTed9c_GQ&ab_channel=MDTechVideos" target="_blank">video tutorial</a></li>
                          <li className="ml-1">-Allow main.exe in windows deffender <a className="text-blue-700" href="https://www.youtube.com/watch?v=5v-HevRWzMk&ab_channel=QuickTipsTo" target="_blank">video tutorial</a></li>
                         </ul>
                       </li>
