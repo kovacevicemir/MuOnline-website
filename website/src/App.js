@@ -426,15 +426,15 @@ function App() {
                     <div>
                       <SimpleCaptcha setIsCaptchaOk={setIsCaptchaOk} />
                     </div>
-                    {/* <button
+                    <button
                       onClick={() => registerHandler()}
                       disabled
                       type="submit"
                       className="w-full bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg font-semibold"
                     >
                       Register
-                    </button> */}
-                    <span style={{fontStyle:'italic', fontSize:"12px"}}>Registration will be available soon!</span>
+                    </button>
+                    {/* <span style={{fontStyle:'italic', fontSize:"12px"}}>Registration will be available soon!</span> */}
                   </div>
                 </div>
               )}
@@ -571,17 +571,15 @@ function App() {
                       <li>2. Extract files</li>
                       <li>
                         3. Install all from
-                        Visual-C-Runtimes-All-in-One-May-2024 folder
+                        Visual-C-Runtimes-All-in-One folderM<br/>
                         "install_all.bat" - double click!
                       </li>
                       <li>
-                        4. Set resolution - download & use{" "}
-                        <a
-                          className="text-blue-600"
-                          href="https://mega.nz/file/7u5jVILD#ENl7e0IphK3bUIp4ENcTSXW0N3rtfv4sEJKiZ6CROfg"
-                        >
-                          Mu screen resolution settings program
-                        </a>
+                        4. Set resolution:
+                        <ul>
+                         <li>Use MuResolution.exe from MuScreenResolution folder</li>
+                         <li>Or use Scripts from MuScreenResolution folder</li>
+                        </ul>
                       </li>
                       <li>5. Click on main.exe Start the game!</li>
                     </ul>
@@ -596,7 +594,7 @@ function App() {
         <section id="players" className="py-16">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-[#9999ff] mb-4">
-              Top 10 Players
+              Top 20 Players
             </h2>
             <div className="w-full justify-center rounded-lg p-6 shadow-lg flex flex-col items-center text-white">
               <div
