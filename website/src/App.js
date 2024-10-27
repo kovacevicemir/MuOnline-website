@@ -692,7 +692,7 @@ function App() {
                       ✅ <strong>Drop:</strong> 60%
                     </li>
                     <li>
-                      ✅ <strong>Top UP Wcoins Ratio:</strong>
+                      ✅ <strong>Top UP Wcoins Ratio: <span className="font-bold">1:2</span></strong>
                     </li>
                     <hr class="border-t-2 border-gray-700" />
                     <li>
