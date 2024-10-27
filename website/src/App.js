@@ -587,7 +587,7 @@ function App() {
                          <li className="ml-1">-Allow main.exe in windows deffender <a className="text-blue-700" href="https://www.youtube.com/watch?v=5v-HevRWzMk&ab_channel=QuickTipsTo" target="_blank">video tutorial</a></li>
                         </ul>
                       </li>
-                      <li>5. Click on main.exe Start the game!</li>
+                      <li>5. Click on <span style={{color:"orange"}} className="font-semibold">main.exe</span> Start the game!</li>
                     </ul>
                   </div>
                 </div>
