@@ -150,7 +150,7 @@ app.get("/ranking", async (req, res) => {
     await sql.connect(dbConfig);
 
     const formQuery = `
-  SELECT TOP 21 cLevel, Class, Experience, RESETS, Name
+  SELECT TOP 22 cLevel, Class, Experience, RESETS, Name
   FROM MuOnline.dbo.Character
   ORDER BY RESETS DESC, cLevel DESC;
 `;
