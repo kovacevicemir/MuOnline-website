@@ -567,18 +567,24 @@ function App() {
                       Installation
                     </h3>
                     <ul className="mt-2 text-left text-sm space-y-[3px]">
-                      <li>1. Download Mu online Client</li>
-                      <li>2. Extract files</li>
+                      <li>1. Download Mu online Client & Extract files</li>
                       <li style={{color:"yellow"}}>
-                        3. Install all from
+                        2. Install all from
                         Visual-C-Runtimes-All-in-One folder<br/>
                         "install_all.bat" - double click!
                       </li>
                       <li>
-                        4. Set resolution:
+                        3. Set resolution:
                         <ul>
                          <li className="ml-1">-Use MuResolution.exe from MuScreenResolution folder</li>
                          <li className="ml-1">-Or use Scripts from MuScreenResolution folder</li>
+                        </ul>
+                      </li>
+                      <li>
+                        4. Random DC? (Disconnect):
+                        <ul>
+                         <li className="ml-1">-Turn off real time protection from windows security settings</li>
+                         <li className="ml-1">-Allow main.exe in windows deffender <a href="https://www.youtube.com/watch?v=5v-HevRWzMk&ab_channel=QuickTipsTo" target="_blank">video</a></li>
                         </ul>
                       </li>
                       <li>5. Click on main.exe Start the game!</li>
