@@ -547,7 +547,7 @@ function App() {
               {/* <!-- Download Section --> */}
               <section id="download" className="pb-16">
                 <div className="max-w-3xl mx-auto text-center">
-                  <div className="shadow-md rounded-md py-6">
+                  <div className="shadow-md rounded-md py-5">
                     <h2 className="text-3xl font-bold text-yellow-500 mb-8">
                       Download the Game
                     </h2>
@@ -566,7 +566,7 @@ function App() {
                     <h3 className="text-2xl font-semibold mb-4">
                       Installation
                     </h3>
-                    <ul className="mt-2 text-left ">
+                    <ul className="mt-2 text-left text-sm">
                       <li>1. Download Mu online Client</li>
                       <li>2. Extract files</li>
                       <li className="text-orange">
