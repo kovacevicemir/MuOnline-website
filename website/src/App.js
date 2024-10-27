@@ -566,10 +566,10 @@ function App() {
                     <h3 className="text-2xl font-semibold mb-4">
                       Installation
                     </h3>
-                    <ul className="mt-2 text-left text-sm">
+                    <ul className="mt-2 text-left text-sm space-y-[3px]">
                       <li>1. Download Mu online Client</li>
                       <li>2. Extract files</li>
-                      <li className="text-orange">
+                      <li style={{color:"orange"}}>
                         3. Install all from
                         Visual-C-Runtimes-All-in-One folder<br/>
                         "install_all.bat" - double click!
