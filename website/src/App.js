@@ -583,8 +583,8 @@ function App() {
                       <li>
                         4. Random DC? (Disconnect):
                         <ul>
-                         <li className="ml-1">-Turn off real time protection from windows security settings</li>
-                         <li className="ml-1">-Allow main.exe in windows deffender <a href="https://www.youtube.com/watch?v=5v-HevRWzMk&ab_channel=QuickTipsTo" target="_blank">video</a></li>
+                         <li className="ml-1">-Turn off real time protection from windows security settings <a className="text-blue-700" href="https://www.youtube.com/watch?v=o0OTed9c_GQ&ab_channel=MDTechVideos" target="_blank">video tutorial</a></li>
+                         <li className="ml-1">-Allow main.exe in windows deffender <a className="text-blue-700" href="https://www.youtube.com/watch?v=5v-HevRWzMk&ab_channel=QuickTipsTo" target="_blank">video tutorial</a></li>
                         </ul>
                       </li>
                       <li>5. Click on main.exe Start the game!</li>
