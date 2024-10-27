@@ -559,7 +559,7 @@ function App() {
                       Download Mu Online Client
                     </a>
                     <p className="my-10 text-gray-400">
-                      Please ensure you have the latest version of the game.
+                      Please follow installation instructions to avoid errors!.
                     </p>
                   </div>
                   <div className="p-6 mt-10 rounded-lg shadow-md flex flex-col items-center">
@@ -569,7 +569,7 @@ function App() {
                     <ul className="mt-2 text-left text-sm space-y-[3px]">
                       <li>1. Download Mu online Client</li>
                       <li>2. Extract files</li>
-                      <li style={{color:"orange"}}>
+                      <li style={{color:"yellow"}}>
                         3. Install all from
                         Visual-C-Runtimes-All-in-One folder<br/>
                         "install_all.bat" - double click!
@@ -577,8 +577,8 @@ function App() {
                       <li>
                         4. Set resolution:
                         <ul>
-                         <li>-Use MuResolution.exe from MuScreenResolution folder</li>
-                         <li>-Or use Scripts from MuScreenResolution folder</li>
+                         <li className="ml-1">-Use MuResolution.exe from MuScreenResolution folder</li>
+                         <li className="ml-1">-Or use Scripts from MuScreenResolution folder</li>
                         </ul>
                       </li>
                       <li>5. Click on main.exe Start the game!</li>
