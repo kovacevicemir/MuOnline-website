@@ -160,7 +160,7 @@ app.get("/ranking", async (req, res) => {
     const normalizeResult = result?.recordset.map((row) => {
       const { cLevel, Class, Experience, RESETS, Name } = row;
       return { cLevel, Class, Experience, RESETS, Name };
-    }).filter(char => char.Name !== "Admin");
+    }).filter(char => char.Name !== "Admin" && char.Name !=="admin2");
 
     res.setHeader("Content-Type", "application/json");
     return res.end(JSON.stringify({ data: normalizeResult }));
