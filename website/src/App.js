@@ -624,7 +624,7 @@ function App() {
                     </thead>
                     <tbody>
                       {top100 &&
-                        top100.slice(0, 10).map((player, index) => (
+                        top100.slice(0, 20).map((player, index) => (
                           <tr
                             key={index}
                             className={`${
