@@ -566,7 +566,7 @@ function App() {
                     <h3 className="text-2xl font-semibold mb-4">
                       Installation
                     </h3>
-                    <ul className="mt-2 text-left text-sm space-y-[3px]">
+                    <ul className="mt-2 text-left text-sm space-y-[4px]">
                       <li>1. Download Mu online Client & Extract files</li>
                       <li style={{color:"yellow"}}>
                         2. Install all from
