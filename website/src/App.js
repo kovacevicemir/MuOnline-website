@@ -670,6 +670,9 @@ function App() {
                         <th className="border border-blue-500 px-4 py-2 text-center">
                           Class
                         </th>
+                        <th className="border border-blue-500 px-4 py-2 text-center">
+                          M-Level
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -691,6 +694,9 @@ function App() {
                             </td>
                             <td className="border border-blue-500 px-4 py-2 text-center">
                               {player.cLevel}
+                            </td>
+                            <td className="border border-blue-500 px-4 py-2 text-center">
+                              {player.mLevel}
                             </td>
                             {/* <td className="border border-blue-500 px-4 py-2 text-center">
                               {player.RESETS}
