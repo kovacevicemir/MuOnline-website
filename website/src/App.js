@@ -698,7 +698,7 @@ function App() {
                             {/* <td className="border border-blue-500 px-4 py-2 text-center">
                               {player.RESETS}
                             </td> */}
-                            <td className="border border-blue-500 px-4 py-2 text-center text-sm">
+                            <td className="border border-blue-500 px-4 py-2 text-center text-xs">
                               {normalizeClassName(player.Class)}
                             </td>
                             <td className="border border-blue-500 px-4 py-2 text-center">
