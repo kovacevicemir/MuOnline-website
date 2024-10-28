@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import SimpleCaptcha from "./Captcha";
 import EmbeddedVideo from "./EmbeddedVideo";
 import Countdown from "react-countdown";
-import labyrinthmulogo from "./labyrinthmulogo.webp"
+import labyrinthmulogo from "./labyrinthmulogo.webp";
 
 const validateEmail = (email) => {
   return String(email)
@@ -292,7 +292,7 @@ function App() {
             backgroundSize: "",
             backgroundPosition: "center",
             maxWidth: "1920px",
-            boxShadow:"-1px 19px 20px 1px black"
+            boxShadow: "-1px 19px 20px 1px black",
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -335,7 +335,11 @@ function App() {
 
         <EmbeddedVideo />
 
-        <section id="register" className="py-16 bg-gray-800" style={{boxShadow: 'inset 1px 12px 20px black'}}>
+        <section
+          id="register"
+          className="py-16 bg-gray-800"
+          style={{ boxShadow: "inset 1px 12px 20px black" }}
+        >
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start justify-center">
               {registrationMessage && (
@@ -567,31 +571,77 @@ function App() {
                     </h3>
                     <ul className="mt-2 text-left text-sm space-y-[5px]">
                       <li>1. Download Mu online Client & Extract files</li>
-                      <li style={{color:"yellow"}} className="font-semibold">
-                        2. Install all from
-                        Visual-C-Runtimes-All-in-One folder<br/>
+                      <li style={{ color: "yellow" }} className="font-semibold">
+                        2. Install all from Visual-C-Runtimes-All-in-One folder
+                        <br />
                         "install_all.bat" - double click!
                       </li>
                       <li>
                         3. Set resolution:
                         <ul>
-                         <li className="ml-1">-Use MuResolution.exe from MuScreenResolution folder</li>
-                         <li className="ml-1">-Or use Scripts from MuScreenResolution folder</li>
+                          <li className="ml-1">
+                            -Use MuResolution.exe from MuScreenResolution folder
+                          </li>
+                          <li className="ml-1">
+                            -Or use Scripts from MuScreenResolution folder
+                          </li>
                         </ul>
                       </li>
                       <li>
                         4. Random DC? (Disconnect):
                         <ul>
-                         <li className="ml-1">-Turn off real time protection in windows security <a className="text-blue-700" href="https://www.youtube.com/watch?v=o0OTed9c_GQ&ab_channel=MDTechVideos" target="_blank">video tutorial</a></li>
-                         <li className="ml-1">-Allow main.exe in windows deffender <a className="text-blue-700" href="https://www.youtube.com/watch?v=5v-HevRWzMk&ab_channel=QuickTipsTo" target="_blank">video tutorial</a></li>
+                          <li className="ml-1">
+                            -Turn off real time protection in windows security{" "}
+                            <a
+                              className="text-blue-700"
+                              href="https://www.youtube.com/watch?v=o0OTed9c_GQ&ab_channel=MDTechVideos"
+                              target="_blank"
+                            >
+                              video tutorial
+                            </a>
+                          </li>
+                          <li className="ml-1">
+                            -Allow main.exe in windows deffender{" "}
+                            <a
+                              className="text-blue-700"
+                              href="https://www.youtube.com/watch?v=5v-HevRWzMk&ab_channel=QuickTipsTo"
+                              target="_blank"
+                            >
+                              video tutorial
+                            </a>
+                          </li>
                         </ul>
                       </li>
-                      <li>5. Click on <span style={{color:"orange"}} className="font-semibold">main.exe</span> Start the game!</li>
+                      <li>
+                        5. Click on{" "}
+                        <span
+                          style={{ color: "orange" }}
+                          className="font-semibold"
+                        >
+                          main.exe
+                        </span>{" "}
+                        Start the game!
+                      </li>
                     </ul>
                   </div>
                 </div>
               </section>
             </div>
+          </div>
+          {/* Auto joiner section */}
+          <div>
+            <h2 className="text-lg font-semibold text-yellow-400">Auto Login</h2>
+            <p>
+              Are you playing on 5 clients at the same time? Try our{" "}
+              <a
+                href="https://mega.nz/file/imA2FIhS#9YOzgRdjs7SmTYZ7c8SIAmcpCNxz3SUqmlVcTA_0Dok"
+                target="_blank"
+                className="text-blue-700"
+              >
+                Auto login
+              </a>
+            </p>
+            <p style={{fontStyle:'italic'}}>Follow instructions from how to use.txt and HOW IT WORKS.jpg</p>
           </div>
         </section>
 
@@ -692,7 +742,11 @@ function App() {
                       ✅ <strong>Drop:</strong> 60%
                     </li>
                     <li>
-                      ✅ <strong>Top UP Wcoins Ratio: <span className="font-bold">1:2</span></strong>
+                      ✅{" "}
+                      <strong>
+                        Top UP Wcoins Ratio:{" "}
+                        <span className="font-bold">1:2</span>
+                      </strong>
                     </li>
                     <hr class="border-t-2 border-gray-700" />
                     <li>
@@ -735,7 +789,7 @@ function App() {
                       ✅ <strong>Chaos Machine:</strong> Customize
                     </li>
                     <li>
-                      ✅ <strong>Free RF & Summoner</strong> 
+                      ✅ <strong>Free RF & Summoner</strong>
                     </li>
                     <li>
                       ✅ <strong>Online Reward per hour:</strong> 5
