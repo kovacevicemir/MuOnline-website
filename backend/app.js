@@ -158,8 +158,8 @@ app.get("/ranking", async (req, res) => {
     const result = await sql.query(formQuery);
 
     const normalizeResult = result?.recordset.map((row) => {
-      const { cLevel, Class, Experience, RESETS, Name } = row;
-      return { cLevel, Class, Experience, RESETS, Name };
+      const { cLevel, Class, Experience, RESETS, Name, mLevel } = row;
+      return { cLevel, Class, Experience, RESETS, Name, mLevel };
     }).filter(char => char.Name !== "Admin" && char.Name !=="admin2");
 
     res.setHeader("Content-Type", "application/json");
