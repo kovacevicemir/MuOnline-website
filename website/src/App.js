@@ -634,7 +634,7 @@ function App() {
             <p>
               Are you playing on 5 clients at the same time? Try our{" "}
               <a
-                href="https://mega.nz/file/imA2FIhS#9YOzgRdjs7SmTYZ7c8SIAmcpCNxz3SUqmlVcTA_0Dok"
+                href="https://mega.nz/file/nuhGCIbB#NdC5EjOx6w40W15Oj-zyEFJ7KIWxYWQjSm6e5iFhZxw"
                 target="_blank"
                 className="text-blue-700"
               >
