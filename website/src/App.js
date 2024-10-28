@@ -692,9 +692,7 @@ function App() {
                                 {player.Name} {isMedal(index + 1)}
                               </span>
                             </td>
-                            <td className="border border-blue-500 px-4 py-2 text-center">
-                              {player.mLevel}
-                            </td>
+                            
                             <td className="border border-blue-500 px-4 py-2 text-center">
                               {player.cLevel}
                             </td>
@@ -703,6 +701,9 @@ function App() {
                             </td> */}
                             <td className="border border-blue-500 px-4 py-2 text-center">
                               {normalizeClassName(player.Class)}
+                            </td>
+                            <td className="border border-blue-500 px-4 py-2 text-center">
+                              {player.mLevel}
                             </td>
                           </tr>
                         ))}
