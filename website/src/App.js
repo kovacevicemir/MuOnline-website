@@ -693,10 +693,10 @@ function App() {
                               </span>
                             </td>
                             <td className="border border-blue-500 px-4 py-2 text-center">
-                              {player.cLevel}
+                              {player.mLevel}
                             </td>
                             <td className="border border-blue-500 px-4 py-2 text-center">
-                              {player.mLevel}
+                              {player.cLevel}
                             </td>
                             {/* <td className="border border-blue-500 px-4 py-2 text-center">
                               {player.RESETS}
