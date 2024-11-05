@@ -596,7 +596,7 @@ function App() {
                         <span className="font-semibold text-green-600">
                           Start Game
                         </span>{" "}
-                        Start the game!
+                        to start the game!
                       </li>
                     </ul>
                   </div>
