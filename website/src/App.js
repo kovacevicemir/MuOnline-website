@@ -313,9 +313,11 @@ function App() {
             >
               Labyrinth Mu - Season 6!
             </h1>
-            <p className="text-lg mt-4 font-extrabold bg-gray-600 p-1 opacity-30 border rounded-md">
-              Register now and play OPEN BETA!
-            </p>
+            <div className="bg-gray-600 p-1 opacity-30 border rounded-md">
+              <p className="text-lg mt-4 font-extrabold ">
+                Register now and play OPEN BETA!
+              </p>
+            </div>
             <a
               href="#register"
               className="hover:cursor-pointer mt-8 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full text-xl"
@@ -562,7 +564,9 @@ function App() {
                       href="https://mega.nz/file/jjBHQRgb#48eORffIPJ3QVCmfFy2hwDT4DaE4h9io-Mzbg0B4cX4"
                       target="_blank"
                       className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl rounded-full"
-                      onClick={() => alert("Please read Installation instructions!")}
+                      onClick={() =>
+                        alert("Please read Installation instructions!")
+                      }
                     >
                       Download Mu Online Client
                     </a>
@@ -577,14 +581,19 @@ function App() {
                     <ul className="mt-2 text-left text-sm space-y-[5px]">
                       <li>1. Download Mu online Client & Extract files</li>
                       <li className="font-semibold">
-                        2. Add MU to Data Execution Prevention 
-                        <a className="text-blue-600" href="https://www.youtube.com/watch?v=A9ZtiievHCo&ab_channel=TidentGamesSEA" target="_blank"> Video</a>
+                        2. Add MU to Data Execution Prevention
+                        <a
+                          className="text-blue-600"
+                          href="https://www.youtube.com/watch?v=A9ZtiievHCo&ab_channel=TidentGamesSEA"
+                          target="_blank"
+                        >
+                          {" "}
+                          Video
+                        </a>
                       </li>
                       <li>
                         3. Click on{" "}
-                        <span
-                          className="font-semibold text-green-600"
-                        >
+                        <span className="font-semibold text-green-600">
                           Start Game
                         </span>{" "}
                         Start the game!
