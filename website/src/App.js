@@ -21,7 +21,7 @@ function App() {
     password: "",
   });
   const [registrationMessage, setRegistrationMessage] = useState("");
-  const targetDate = new Date("2024-12-1T19:00:00+08:00");
+  const targetDate = new Date("2024-12-01T19:00:00+08:00");
 
   // const [resetDetails, setResetDetails] = useState({
   //   username: "",
