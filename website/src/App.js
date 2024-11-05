@@ -136,6 +136,8 @@ function App() {
         return "Blade Master";
       case 48:
         return "Magic Gladiator";
+      case 50:
+        return "Duel Master";
       case 64:
         return "Dark Lord";
       case 66:
@@ -150,6 +152,8 @@ function App() {
         return "Summoner";
       case 81:
         return "Bloody Summoner";
+      case 82:
+        return "Dimension Master";
       case 98:
         return "Grand Master";
 
