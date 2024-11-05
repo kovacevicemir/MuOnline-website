@@ -238,7 +238,7 @@ function App() {
           <div className="flex flex-col items-center">
             <div
               className="bg-gray-800 whitesmoke p-2 w-12 h-12 flex items-center justify-center rounded-md shadow-lg"
-              style={{ border: "4px solid #9999ff" }}
+              style={{ border: "4px solid rgb(140,48,75)" }}
             >
               {days}
             </div>
@@ -329,7 +329,7 @@ function App() {
                 color: "white",
                 fontFamily: "",
                 textShadow: "1px 1px black",
-                backgroundColor: "#9999ff",
+                backgroundColor: "rgb(140,48,75)",
               }}
               className="mt-12 rounded-md px-3 sm:text-md mx-2"
             >
@@ -356,7 +356,7 @@ function App() {
               {/* <!-- Register Section --> */}
               {registrationMessage === "" && (
                 <div className="bg-gray-700 p-8 rounded-lg shadow-lg">
-                  <h2 className="text-3xl font-bold text-yellow-500 text-center mb-8">
+                  <h2 className="text-3xl font-bold text-white text-center mb-8">
                     Register
                   </h2>
                   <div className="space-y-6" autocomplete="off">
@@ -557,7 +557,7 @@ function App() {
               <section id="download" className="pb-16">
                 <div className="max-w-3xl mx-auto text-center">
                   <div className="shadow-md rounded-md py-5">
-                    <h2 className="text-3xl font-bold text-yellow-500 mb-8">
+                    <h2 className="text-3xl font-bold text-white mb-8">
                       Download the Game
                     </h2>
                     <a
