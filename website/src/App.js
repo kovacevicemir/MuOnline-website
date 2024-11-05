@@ -572,9 +572,9 @@ function App() {
                     </h3>
                     <ul className="mt-2 text-left text-sm space-y-[5px]">
                       <li>1. Download Mu online Client & Extract files</li>
-                      <li className="font-semibold text-orange-500">
-                        <a className="text-blue-700" href="https://www.youtube.com/watch?v=A9ZtiievHCo&ab_channel=TidentGamesSEA" target="_blank"> video</a>
+                      <li className="font-semibold">
                         2. Add mu to Data Execution Prevention 
+                        <a className="text-blue-700" href="https://www.youtube.com/watch?v=A9ZtiievHCo&ab_channel=TidentGamesSEA" target="_blank"> video</a>
                       </li>
                       <li>
                         3. Click on{" "}
@@ -633,9 +633,9 @@ function App() {
                         <th className="border border-blue-500 px-4 py-2 text-center">
                           Class
                         </th>
-                        <th className="border border-blue-500 px-4 py-2 text-center">
+                        {/* <th className="border border-blue-500 px-4 py-2 text-center">
                           M-Level
-                        </th>
+                        </th> */}
                       </tr>
                     </thead>
                     <tbody>
@@ -830,7 +830,7 @@ function App() {
                   maps, events, and equipment are now available.
                 </p>
                 <strong style={{ color: "yellowgreen" }}>
-                  LAUNCH DATE: 27. October (6pm GMT+8) 2024
+                  LAUNCH DATE: 1. December (6pm GMT+8) 2024
                 </strong>
               </div>
             </div>
