@@ -313,8 +313,8 @@ function App() {
             >
               Labyrinth Mu - Season 6!
             </h1> */}
-            <div className="bg-gray-600 p-1 opacity-30 rounded-md">
-              <p className="opacity-100 text-white text-lg font-extrabold ">
+            <div className="bg-gray-600 p-1 opacity-80 rounded-md">
+              <p className=" text-white text-lg font-extrabold ">
                 Register now and play OPEN BETA!
               </p>
             </div>
