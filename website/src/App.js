@@ -313,7 +313,7 @@ function App() {
             >
               Labyrinth Mu - Season 6!
             </h1>
-            <p className="text-lg mt-4 font-extrabold bg-gray-800 p-1">
+            <p className="text-lg mt-4 font-extrabold bg-gray-600 p-1 opacity-30 border rounded-md">
               Register now and play OPEN BETA!
             </p>
             <a
