@@ -573,7 +573,7 @@ function App() {
                     <ul className="mt-2 text-left text-sm space-y-[5px]">
                       <li>1. Download Mu online Client & Extract files</li>
                       <li className="font-semibold">
-                        2. Add mu to Data Execution Prevention 
+                        2. Add MU to Data Execution Prevention 
                         <a className="text-blue-600" href="https://www.youtube.com/watch?v=A9ZtiievHCo&ab_channel=TidentGamesSEA" target="_blank"> Video</a>
                       </li>
                       <li>
