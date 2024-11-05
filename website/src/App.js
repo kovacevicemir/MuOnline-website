@@ -21,7 +21,7 @@ function App() {
     password: "",
   });
   const [registrationMessage, setRegistrationMessage] = useState("");
-  const targetDate = new Date("2024-10-27T19:00:00+08:00");
+  const targetDate = new Date("2024-12-1T19:00:00+08:00");
 
   // const [resetDetails, setResetDetails] = useState({
   //   username: "",
@@ -331,7 +331,7 @@ function App() {
               }}
               className="mt-12 rounded-md px-3 sm:text-md mx-2"
             >
-              Grand opening - 27. October 7pm (GMT+8) 2024
+              Grand opening - 1. December 7pm (GMT+8) 2024
             </strong>
             <Countdown date={targetDate} renderer={countdownRenderer} />
           </div>
