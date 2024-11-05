@@ -709,7 +709,11 @@ function App() {
                       ✅ <strong>Version:</strong> Season 6 Episode 3
                     </li>
                     <li>
-                      ✅ <strong>Server Files:</strong> <span className="glow-effect">Louis Premium Files!</span>
+                      ✅ <strong>Server Files:</strong>{" "}
+                      <span className="glow-effect">Louis Premium Files!</span>
+                    </li>
+                    <li>
+                      ✅ <strong className="glow-effect">Open php|RMT</strong>
                     </li>
                     <li>
                       ✅ <strong>Hosting:</strong> Premium dedicated VPS
@@ -812,9 +816,6 @@ function App() {
                     </li>
                     <li>
                       💯 <strong>Cash Prizes Events/CS</strong>
-                    </li>
-                    <li>
-                      ✅ <strong  className="glow-effect">Open php|RMT</strong>
                     </li>
                   </ul>
                 </div>
