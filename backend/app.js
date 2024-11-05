@@ -150,16 +150,16 @@ app.get("/ranking", async (req, res) => {
     await sql.connect(dbConfig);
 
     const formQuery = `
-  SELECT TOP 22 cLevel, Class, Experience, Name, mLevel
+  SELECT TOP 22 cLevel, Class, Experience, Name
   FROM MuOnline.dbo.Character
-  ORDER BY RESETS DESC, cLevel DESC, mLevel;
+  ORDER BY RESETS DESC, cLevel DESC;
 `;
 
     const result = await sql.query(formQuery);
 
     const normalizeResult = result?.recordset.map((row) => {
-      const { cLevel, Class, Experience, Name, mLevel } = row;
-      return { cLevel, Class, Experience, Name, mLevel };
+      const { cLevel, Class, Experience, Name } = row;
+      return { cLevel, Class, Experience, Name };
     }).filter(char => char.Name !== "Admin" && char.Name !=="admin2");
 
     res.setHeader("Content-Type", "application/json");
