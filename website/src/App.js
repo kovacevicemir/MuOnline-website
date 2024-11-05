@@ -237,8 +237,8 @@ function App() {
           {/* Days */}
           <div className="flex flex-col items-center">
             <div
-              className="bg-gray-800 whitesmoke p-2 w-12 h-12 flex items-center justify-center rounded-md shadow-lg"
-              style={{ border: "4px solid rgb(154,154,154)" }}
+              className="bg-gray-800 whitesmoke glow-effect p-2 w-12 h-12 flex items-center justify-center rounded-md shadow-lg"
+              style={{ border: "4px solid rgb(140,48,75)" }}
             >
               {days}
             </div>
