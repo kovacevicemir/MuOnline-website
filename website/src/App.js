@@ -242,25 +242,25 @@ function App() {
             >
               {days}
             </div>
-            <span className="text-sm whitesmoke mt-1">days</span>
+            <span className="text-sm whitesmoke mt-1">Days</span>
           </div>
 
           {/* Hours */}
           <div className="flex flex-col items-center">
             <div
               className="bg-gray-800 whitesmoke p-2 w-12 h-12 flex items-center justify-center rounded-md shadow-lg"
-              style={{ border: "4px solid #9999ff" }}
+              style={{ border: "4px solid rgb(140,48,75)" }}
             >
               {hours}
             </div>
-            <span className="text-sm whitesmoke mt-1">hrs</span>
+            <span className="text-sm whitesmoke mt-1">Hrs</span>
           </div>
 
           {/* Minutes */}
           <div className="flex flex-col items-center">
             <div
               className="bg-gray-800 whitesmoke p-2 w-12 h-12 flex items-center justify-center rounded-md shadow-lg"
-              style={{ border: "4px solid #9999ff" }}
+              style={{ border: "4px solid rgb(140,48,75)" }}
             >
               {minutes}
             </div>
@@ -271,7 +271,7 @@ function App() {
           <div className="flex flex-col items-center">
             <div
               className="bg-gray-800 whitesmoke p-2 w-12 h-12 flex items-center justify-center rounded-md shadow-lg"
-              style={{ border: "4px solid #9999ff" }}
+              style={{ border: "4px solid rgb(140,48,75)" }}
             >
               {seconds}
             </div>
