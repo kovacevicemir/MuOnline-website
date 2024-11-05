@@ -574,7 +574,7 @@ function App() {
                       Please follow installation instructions to avoid errors!.
                     </p>
                   </div>
-                  <div className="p-6 mt-10 rounded-lg shadow-md flex flex-col items-center">
+                  <div className="p-6 mt-10 rounded-lg shadow-md flex flex-col items-center glow-effect">
                     <h3 className="text-2xl font-semibold mb-4">
                       Installation
                     </h3>
