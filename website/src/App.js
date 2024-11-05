@@ -558,6 +558,7 @@ function App() {
                       href="https://mega.nz/file/jqY1RDCY#GWu8W33UytWyUxOsoWm6ol4SXKgEvF85YrD5w9TPG1k"
                       target="_blank"
                       className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl rounded-full"
+                      onClick={() => alert("Please read Installation instructions!")}
                     >
                       Download Mu Online Client
                     </a>
@@ -571,16 +572,14 @@ function App() {
                     </h3>
                     <ul className="mt-2 text-left text-sm space-y-[5px]">
                       <li>1. Download Mu online Client & Extract files</li>
-                      <li style={{ color: "yellow" }} className="font-semibold">
-                        2. Add mu to Data Execution Prevention
-                        <br />
+                      <li className="font-semibold text-orange-500">
                         <a className="text-blue-700" href="https://www.youtube.com/watch?v=A9ZtiievHCo&ab_channel=TidentGamesSEA" target="_blank"> video</a>
+                        2. Add mu to Data Execution Prevention 
                       </li>
                       <li>
                         3. Click on{" "}
                         <span
-                          style={{ color: "orange" }}
-                          className="font-semibold"
+                          className="font-semibold text-green-600"
                         >
                           Start Game
                         </span>{" "}
