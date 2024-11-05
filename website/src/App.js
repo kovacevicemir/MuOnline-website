@@ -313,8 +313,8 @@ function App() {
             >
               Labyrinth Mu - Season 6!
             </h1>
-            <p className="text-lg mt-4">
-              Register now and start your adventure.
+            <p className="text-lg mt-4 font-extrabold">
+              Register now and play OPEN BETA!
             </p>
             <a
               href="#register"
