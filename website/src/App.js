@@ -572,53 +572,17 @@ function App() {
                     <ul className="mt-2 text-left text-sm space-y-[5px]">
                       <li>1. Download Mu online Client & Extract files</li>
                       <li style={{ color: "yellow" }} className="font-semibold">
-                        2. Install all from Visual-C-Runtimes-All-in-One folder
+                        2. Add mu to Data Execution Prevention
                         <br />
-                        "install_all.bat" - double click!
+                        <a className="text-blue-700" href="https://www.youtube.com/watch?v=A9ZtiievHCo&ab_channel=TidentGamesSEA" target="_blank"> video</a>
                       </li>
                       <li>
-                        3. Set resolution:
-                        <ul>
-                          <li className="ml-1">
-                            -Use MuResolution.exe from MuScreenResolution folder
-                          </li>
-                          <li className="ml-1">
-                            -Or use Scripts from MuScreenResolution folder
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        4. Random DC? (Disconnect):
-                        <ul>
-                          <li className="ml-1">
-                            -Turn off real time protection in windows security{" "}
-                            <a
-                              className="text-blue-700"
-                              href="https://www.youtube.com/watch?v=o0OTed9c_GQ&ab_channel=MDTechVideos"
-                              target="_blank"
-                            >
-                              video tutorial
-                            </a>
-                          </li>
-                          <li className="ml-1">
-                            -Allow main.exe in windows deffender{" "}
-                            <a
-                              className="text-blue-700"
-                              href="https://www.youtube.com/watch?v=5v-HevRWzMk&ab_channel=QuickTipsTo"
-                              target="_blank"
-                            >
-                              video tutorial
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        5. Click on{" "}
+                        3. Click on{" "}
                         <span
                           style={{ color: "orange" }}
                           className="font-semibold"
                         >
-                          main.exe
+                          Start Game
                         </span>{" "}
                         Start the game!
                       </li>
@@ -629,7 +593,7 @@ function App() {
             </div>
           </div>
           {/* Auto joiner section */}
-          <div>
+          {/* <div>
             <h2 className="text-lg font-semibold text-yellow-400">Auto Login</h2>
             <p>
               Are you playing on 5 clients at the same time? Try our{" "}
@@ -642,7 +606,7 @@ function App() {
               </a>
             </p>
             <p style={{fontStyle:'italic'}}>Follow instructions from how to use.txt and HOW IT WORKS.jpg</p>
-          </div>
+          </div> */}
         </section>
 
         {/* <!-- Top 100 Players Section --> */}
