@@ -555,7 +555,7 @@ function App() {
                       Download the Game
                     </h2>
                     <a
-                      href="https://mega.nz/file/jqY1RDCY#GWu8W33UytWyUxOsoWm6ol4SXKgEvF85YrD5w9TPG1k"
+                      href="https://mega.nz/file/jjBHQRgb#48eORffIPJ3QVCmfFy2hwDT4DaE4h9io-Mzbg0B4cX4"
                       target="_blank"
                       className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl rounded-full"
                       onClick={() => alert("Please read Installation instructions!")}
@@ -574,7 +574,7 @@ function App() {
                       <li>1. Download Mu online Client & Extract files</li>
                       <li className="font-semibold">
                         2. Add mu to Data Execution Prevention 
-                        <a className="text-blue-700" href="https://www.youtube.com/watch?v=A9ZtiievHCo&ab_channel=TidentGamesSEA" target="_blank"> video</a>
+                        <a className="text-blue-600" href="https://www.youtube.com/watch?v=A9ZtiievHCo&ab_channel=TidentGamesSEA" target="_blank"> Video</a>
                       </li>
                       <li>
                         3. Click on{" "}
