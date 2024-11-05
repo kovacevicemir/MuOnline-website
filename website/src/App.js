@@ -700,7 +700,7 @@ function App() {
                       ✅ <strong>Version:</strong> Season 6 Episode 3
                     </li>
                     <li>
-                      ✅ <strong>Server Files:</strong> IGC Premium
+                      ✅ <strong>Server Files:</strong> Louis Premium Files!
                     </li>
                     <li>
                       ✅ <strong>Hosting:</strong> Premium dedicated VPS
@@ -709,7 +709,7 @@ function App() {
                       ✅ <strong>Normal Exp:</strong> 200x
                     </li>
                     <li>
-                      ✅ <strong>Master Exp:</strong> 100x
+                      ✅ <strong>Master Exp:</strong> 200x
                     </li>
                     <li>
                       ✅ <strong>Drop:</strong> 60%
@@ -724,6 +724,9 @@ function App() {
                     <hr class="border-t-2 border-gray-700" />
                     <li>
                       ✅ <strong>Max Level:</strong> 400
+                    </li>
+                    <li>
+                      ✅ <strong>Max Reset:</strong> 5
                     </li>
                     <li>
                       ✅ <strong>Max Master Level:</strong> 200
