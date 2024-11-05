@@ -331,7 +331,7 @@ function App() {
               }}
               className="mt-12 rounded-md px-3 sm:text-md mx-2"
             >
-              Grand opening - 1. December 7pm (GMT+8) 2024
+              Grand Opening - 1. December 7pm (GMT+8) 2024
             </strong>
             <Countdown date={targetDate} renderer={countdownRenderer} />
           </div>
