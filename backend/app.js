@@ -75,10 +75,10 @@ app.post("/register", registerRateLimiter, async (req, res) => {
 
     const formQuery = `INSERT INTO MuOnline.dbo.MEMB_INFO 
     (memb___id, memb__pwd, memb_name, sno__numb, post_code, addr_info, addr_deta, tel__numb, phon_numb, mail_addr, fpas_ques, 
-     job__code, appl_days, modi_days, out__days, true_days, mail_chek, bloc_code, ctl1_code, cspoints, VipType, VipStart, VipDays, JoinDate)
+     job__code, appl_days, modi_days, out__days, true_days, mail_chek, bloc_code, ctl1_code)
 VALUES 
     ('${username}', '${password}', '${username}', '1111111111111', NULL, NULL, NULL, NULL, NULL, '${email}', NULL, 
-     NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL);`;
+     NULL, NULL, NULL, NULL, NULL, 0, 0, 0);`;
 
     await sql.query(formQuery);
 
