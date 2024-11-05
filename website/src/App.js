@@ -813,7 +813,7 @@ function App() {
                     <li>
                       💯 <strong>Cash Prizes Events/CS</strong>
                     </li>
-                    <li>
+                    <li className="glow-effect">
                       ✅ <strong>Open php|RMT</strong>
                     </li>
                   </ul>
