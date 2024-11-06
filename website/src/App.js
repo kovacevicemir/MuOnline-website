@@ -561,7 +561,7 @@ function App() {
                       Download the Game
                     </h2>
                     <a
-                      href="https://mega.nz/file/jjBHQRgb#48eORffIPJ3QVCmfFy2hwDT4DaE4h9io-Mzbg0B4cX4"
+                      href="https://mega.nz/file/2n5xQACA#muCSUZ5PUAMBadlDFuRXzv2TSOGbWCfTmMKN2FonlRE"
                       target="_blank"
                       className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl rounded-full"
                       onClick={() =>
@@ -583,18 +583,18 @@ function App() {
                       <li className="font-semibold">
                         2. Add MU to Data Execution Prevention
                         <a
-                          className="text-blue-600"
+                          className="text-blue-700"
                           href="https://www.youtube.com/watch?v=A9ZtiievHCo&ab_channel=TidentGamesSEA"
                           target="_blank"
                         >
                           {" "}
-                          Video
+                          {">> "} Video {" <<"}
                         </a>
                       </li>
                       <li>
                         3. Click on{" "}
                         <span className="font-semibold text-green-600">
-                          Start Game
+                          Main.exe
                         </span>{" "}
                         to start the game!
                       </li>
