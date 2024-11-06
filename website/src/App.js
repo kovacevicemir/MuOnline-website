@@ -155,7 +155,7 @@ function App() {
       case 82:
         return "Dimension Master";
       case 98:
-        return "Grand Master";
+        return "Fist Master";
 
       default:
         return classNo;

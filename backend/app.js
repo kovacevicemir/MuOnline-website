@@ -91,6 +91,18 @@ VALUES
   }
 });
 
+app.get("/online", async (req,res) =>{
+  try {
+    await sql.connect(dbConfig);
+    const countOnlineUsersQuery = 'SELECT COUNT(ConnectStat) FROM MuOnline.dbo.MEMB_STAT WHERE ConnectStat = 1'
+    const result = await sql.query(countOnlineUsersQuery);
+
+    return res.end(JSON.stringify({ data: result }));
+  } catch (error) {
+    console.log("error: ",error)
+  }
+})
+
 app.post("/reset", async (req, res) => {
   try {
     await sql.connect(dbConfig);
