@@ -892,7 +892,7 @@ function App() {
             <span onClick={() => getOnlineCount()}>Server.</span> All Rights
             Reserved.
           </p>
-          {/* <div className="p-2">{onlineCount && <pre>{onlineCount}</pre>}</div> */}
+          <div className="p-2">{onlineCount && <pre>{onlineCount}</pre>}</div>
         </footer>
       </body>
     </div>
