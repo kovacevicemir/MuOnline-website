@@ -15,6 +15,7 @@ const validateEmail = (email) => {
 };
 
 function App() {
+  const [onlineCount, setOnlineCount] = useState();
   const [registrationDetails, setRegistrationDetails] = useState({
     username: "",
     email: "",
@@ -42,6 +43,17 @@ function App() {
     }
     if (index === 3) {
       return <>&#129353;</>;
+    }
+  };
+
+  const getOnlineCount = async () => {
+    const res = await fetch(`${backendURL}/online`, {
+      method: "GET",
+    });
+
+    const ttt = await res.json();
+    if (ttt?.data) {
+      setOnlineCount(ttt?.data);
     }
   };
 
@@ -874,7 +886,12 @@ function App() {
         </section>
 
         <footer className="py-6 bg-gray-900 text-center text-gray-400">
-          <p>&copy; 2024 Mu Online Private Server. All Rights Reserved.</p>
+          <p>
+            &copy; 2024 Mu Online Private{" "}
+            <span onClick={() => getOnlineCount()}>Server.</span> All Rights
+            Reserved.
+          </p>
+          <div className="p-2">{onlineCount && <pre>{onlineCount}</pre>}</div>
         </footer>
       </body>
     </div>
