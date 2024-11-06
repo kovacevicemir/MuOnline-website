@@ -97,7 +97,7 @@ app.get("/online", async (req,res) =>{
     const countOnlineUsersQuery = 'SELECT COUNT(ConnectStat) FROM MuOnline.dbo.MEMB_STAT WHERE ConnectStat = 1'
     const result = await sql.query(countOnlineUsersQuery);
 
-    return res.end(JSON.stringify({ data: result }));
+    return res.end(JSON.stringify({ data: result.recordset[0] }));
   } catch (error) {
     console.log("error: ",error)
   }
