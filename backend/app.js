@@ -99,7 +99,7 @@ FROM MuOnline.dbo.MEMB_STAT AS Online
 WHERE ConnectStat = 1;`
     const result = await sql.query(countOnlineUsersQuery);
 
-    return res.end(JSON.stringify({ data: result.recordset[0].data }));
+    return res.end(JSON.stringify({ data: result.recordset[0] }));
   } catch (error) {
     console.log("error: ",error)
   }
