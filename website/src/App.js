@@ -642,7 +642,7 @@ function App() {
             <h2 className="text-3xl font-bold text-blue-300 mb-3">
               Top 20 Players
             </h2>
-            <div className="w-full justify-center rounded-lg p-6 shadow-lg flex flex-col items-center text-white">
+            <div className="w-full justify-center rounded-lg p-6 mb-2 shadow-lg flex flex-col items-center text-white">
               <div
                 style={{ maxWidth: "600px" }}
                 className="flex w-full flex-col items-center border rounded-lg border-blue-300"
@@ -705,7 +705,7 @@ function App() {
             <a
               href="https://www.facebook.com/groups/395882375216868"
               target="_blank"
-              className="text-blue-500 mt-2 hover:underline"
+              className="text-blue-500 hover:underline"
             >
               LabyrinthMu 2024 - Facebook
             </a>
