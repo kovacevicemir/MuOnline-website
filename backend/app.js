@@ -207,7 +207,7 @@ const updateWCoinC = async () => {
 };
 
 // Execute the function every 1 minute (60000 milliseconds)
-setInterval(updateWCoinC, 120000);
+setInterval(updateWCoinC, 300000);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
