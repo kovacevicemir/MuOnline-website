@@ -705,7 +705,7 @@ function App() {
             <a
               href="https://www.facebook.com/groups/395882375216868"
               target="_blank"
-              className="text-blue-500 hover:underline"
+              className="text-blue-500 mt-2 hover:underline"
             >
               LabyrinthMu 2024 - Facebook
             </a>
