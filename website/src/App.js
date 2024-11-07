@@ -648,20 +648,20 @@ function App() {
                 className="flex w-full flex-col items-center border rounded-lg border-blue-300"
               >
                 {top100 && (
-                  <table className="table-auto w-full border-collapse border border-blue-500 rounded-lg overflow-hidden">
+                  <table className="table-auto w-full border-collapse border border-blue-300 rounded-lg overflow-hidden">
                     <thead className="bg-gray-800 text-blue-300">
                       <tr>
                         <th className="px-4 py-2 text-center">Name</th>
-                        <th className="border border-blue-500 px-4 py-2 text-center">
+                        <th className="border border-blue-300 px-4 py-2 text-center">
                           Level
                         </th>
-                        {/* <th className="border border-blue-500 px-4 py-2 text-center">
+                        {/* <th className="border border-blue-300 px-4 py-2 text-center">
                           Resets
                         </th> */}
-                        <th className="border border-blue-500 px-4 py-2 text-center">
+                        <th className="border border-blue-300 px-4 py-2 text-center">
                           Class
                         </th>
-                        {/* <th className="border border-blue-500 px-4 py-2 text-center">
+                        {/* <th className="border border-blue-300 px-4 py-2 text-center">
                           M-Level
                         </th> */}
                       </tr>
@@ -673,7 +673,7 @@ function App() {
                             key={index}
                             className={`${
                               index % 2 === 0 ? "bg-gray-800" : "bg-gray-700"
-                            } hover:bg-gray-600 transition-all border border-blue-500`}
+                            } hover:bg-gray-600 transition-all border border-blue-300`}
                           >
                             <td className=" px-4 py-2 flex mt-2 sm:mt:0">
                               <div
@@ -683,16 +683,16 @@ function App() {
                                 {player.Name} {isMedal(index + 1)}
                               </span>
                             </td>
-                            <td className="border border-blue-500 px-4 py-2 text-center">
+                            <td className="border border-blue-300 px-4 py-2 text-center">
                               {player.cLevel}
                             </td>
-                            {/* <td className="border border-blue-500 px-4 py-2 text-center">
+                            {/* <td className="border border-blue-300 px-4 py-2 text-center">
                               {player.RESETS}
                             </td> */}
-                            <td className="border border-blue-500 px-4 py-2 text-center text-xs">
+                            <td className="border border-blue-300 px-4 py-2 text-center text-xs">
                               {normalizeClassName(player.Class)}
                             </td>
-                            {/* <td className="border border-blue-500 px-4 py-2 text-center">
+                            {/* <td className="border border-blue-300 px-4 py-2 text-center">
                               {player.mLevel}
                             </td> */}
                           </tr>
