@@ -187,9 +187,9 @@ app.get("/ranking", async (req, res) => {
 });
 
 const onlineWCoinsRewardQuery = `
-  UPDATE dbo.T_InGameShop_Point
-  SET WCoinC = WCoinC + 2
-  FROM dbo.T_InGameShop_Point igsp
+  UPDATE dbo.CashShopData
+  SET WCoinC = WCoinC + 5
+  FROM dbo.CashShopData igsp
   INNER JOIN dbo.MEMB_STAT ms ON igsp.AccountID = ms.memb___id
   WHERE ms.ConnectStat = 1;
 `;
@@ -207,7 +207,7 @@ const updateWCoinC = async () => {
 };
 
 // Execute the function every 1 minute (60000 milliseconds)
-// setInterval(updateWCoinC, 1800000);
+setInterval(updateWCoinC, 120000);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
