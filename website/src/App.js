@@ -159,6 +159,8 @@ function App() {
         return "Elf";
       case 33:
         return "Muse Elf";
+      case 34:
+        return "High Elf";
       case 96:
         return "Rage fighter";
       case 80:
@@ -637,13 +639,13 @@ function App() {
         {/* <!-- Top 100 Players Section --> */}
         <section id="players" className="py-16">
           <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-[#9999ff] mb-4">
+            <h2 className="text-3xl font-bold text-blue-300 mb-3">
               Top 20 Players
             </h2>
             <div className="w-full justify-center rounded-lg p-6 shadow-lg flex flex-col items-center text-white">
               <div
                 style={{ maxWidth: "600px" }}
-                className="flex w-full flex-col items-center border rounded-lg border-blue-500"
+                className="flex w-full flex-col items-center border rounded-lg border-blue-300"
               >
                 {top100 && (
                   <table className="table-auto w-full border-collapse border border-blue-500 rounded-lg overflow-hidden">
