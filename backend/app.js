@@ -188,7 +188,7 @@ app.get("/ranking", async (req, res) => {
 
 const onlineWCoinsRewardQuery = `
   UPDATE dbo.CashShopData
-  SET WCoinP = WCoinP + 200
+  SET WCoinP = WCoinP + 5000
   FROM dbo.CashShopData igsp
   INNER JOIN dbo.MEMB_STAT ms ON igsp.AccountID = ms.memb___id
   WHERE ms.ConnectStat = 1;
