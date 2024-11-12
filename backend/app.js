@@ -91,19 +91,19 @@ VALUES
   }
 });
 
-app.get("/online", async (req,res) =>{
+app.get("/online", async (req, res) => {
   try {
     await sql.connect(dbConfig);
     const countOnlineUsersQuery = `SELECT COUNT(ConnectStat) AS OnlineCount
 FROM MuOnline.dbo.MEMB_STAT AS Online
-WHERE ConnectStat = 1;`
+WHERE ConnectStat = 1;`;
     const result = await sql.query(countOnlineUsersQuery);
 
     return res.end(JSON.stringify({ data: result.recordset[0] }));
   } catch (error) {
-    console.log("error: ",error)
+    console.log("error: ", error);
   }
-})
+});
 
 app.post("/reset", async (req, res) => {
   try {
@@ -171,10 +171,12 @@ app.get("/ranking", async (req, res) => {
 
     const result = await sql.query(formQuery);
 
-    const normalizeResult = result?.recordset.map((row) => {
-      const { cLevel, Class, Experience, Name } = row;
-      return { cLevel, Class, Experience, Name };
-    }).filter(char => char.Name !== "Admin" && char.Name !=="admin2");
+    const normalizeResult = result?.recordset
+      .map((row) => {
+        const { cLevel, Class, Experience, Name } = row;
+        return { cLevel, Class, Experience, Name };
+      })
+      .filter((char) => char.Name !== "Admin" && char.Name !== "admin2");
 
     res.setHeader("Content-Type", "application/json");
     return res.end(JSON.stringify({ data: normalizeResult }));
@@ -206,8 +208,24 @@ const updateWCoinC = async () => {
     });
 };
 
+const updateMasterLevel = async () => {
+  const updateQuery = `
+    UPDATE mst
+    SET mst.MasterLevel = 1, mst.MasterPoint = 1
+    FROM dbo.MasterSkillTree AS mst
+    INNER JOIN dbo.Character AS c ON mst.Name = c.Name
+    WHERE mst.MasterLevel = 0
+      AND c.cLevel = 400;
+`;
+
+  await sql.query(updateQuery).catch((err) =>{
+    console.log("error updating MA: ",err)
+  });
+};
+
 // Execute the function every 1 minute (60000 milliseconds)
-setInterval(updateWCoinC, 300000);
+setInterval(updateMasterLevel, 30000);
+// setInterval(updateWCoinC, 300000);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
