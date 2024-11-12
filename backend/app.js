@@ -228,6 +228,7 @@ const updateMasterLevel = async () => {
 
 const minute = 60 * 1000; //miliseconds
 // Execute the function every 1 minute (60000 milliseconds)
+
 setInterval(updateMasterLevel, 1 * minute);
 setInterval(updateWCoinC, 15 * minute);
 
