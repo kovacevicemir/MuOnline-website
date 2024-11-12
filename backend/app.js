@@ -210,6 +210,8 @@ const updateWCoinC = async () => {
 
 const updateMasterLevel = async () => {
   console.log("updating master...")
+  await sql.connect(dbConfig);
+  
   const updateQuery = `
     UPDATE mst
     SET mst.MasterLevel = 1, mst.MasterPoint = 1
