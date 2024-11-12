@@ -209,7 +209,7 @@ const updateWCoinC = async () => {
 };
 
 const updateMasterLevel = async () => {
-  console.log("updating master...")
+  console.log("updating master...");
   await sql.connect(dbConfig);
 
   const updateQuery = `
@@ -221,15 +221,18 @@ const updateMasterLevel = async () => {
       AND c.cLevel = 400;
 `;
 
-  await sql.query(updateQuery).catch((err) =>{
-    console.log("error updating MA: ",err)
+  await sql.query(updateQuery).catch((err) => {
+    console.log("error updating MA: ", err);
   });
 };
 
-const minute = 1000; //miliseconds
+const minute = 60 * 1000; //miliseconds
 // Execute the function every 1 minute (60000 milliseconds)
-setInterval(updateMasterLevel, 1 * minute);
-setInterval(updateWCoinC, 15 * minute);
+const masterLevelInterval = setInterval(updateMasterLevel, 1 * minute);
+const wCoinCInterval = setInterval(updateWCoinC, 15 * minute);
+
+clearInterval(masterLevelInterval);
+clearInterval(wCoinCInterval);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
