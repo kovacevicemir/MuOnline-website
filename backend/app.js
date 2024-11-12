@@ -197,33 +197,57 @@ const onlineWCoinsRewardQuery = `
 `;
 
 const updateWCoinC = async () => {
-  await sql.connect(dbConfig);
-  sql
-    .query(onlineWCoinsRewardQuery)
-    .then((result) => {
-      console.log("WCoinC updated for active users");
-    })
-    .catch((err) => {
-      console.error("Error executing query:", err);
-    });
+  console.log("Updating WCoinC...");
+
+  let connection;
+  try {
+    // Establish connection using the connection pool
+    connection = await sql.connect(dbConfig);
+
+    // Execute the query
+    const result = await connection.query(onlineWCoinsRewardQuery);
+    
+    console.log("WCoinC updated for active users");
+  } catch (err) {
+    console.error("Error executing query:", err);
+  } finally {
+    // Always release the connection back to the pool
+    if (connection) {
+      connection.close(); // Close the connection and release it to the pool
+    }
+  }
 };
 
 const updateMasterLevel = async () => {
-  console.log("updating master...");
-  await sql.connect(dbConfig);
+  console.log("Updating master...");
 
-  const updateQuery = `
-    UPDATE mst
-    SET mst.MasterLevel = 1, mst.MasterPoint = 1
-    FROM dbo.MasterSkillTree AS mst
-    INNER JOIN dbo.Character AS c ON mst.Name = c.Name
-    WHERE mst.MasterLevel = 0
-      AND c.cLevel = 400;
-`;
+  let connection;
+  try {
+    // Establish connection using the connection pool
+    connection = await sql.connect(dbConfig);
 
-  await sql.query(updateQuery).catch((err) => {
-    console.log("error updating MA: ", err);
-  });
+    // Your update query
+    const updateQuery = `
+      UPDATE mst
+      SET mst.MasterLevel = 1, mst.MasterPoint = 1
+      FROM dbo.MasterSkillTree AS mst
+      INNER JOIN dbo.Character AS c ON mst.Name = c.Name
+      WHERE mst.MasterLevel = 0
+        AND c.cLevel = 400;
+    `;
+
+    // Execute the query
+    await connection.query(updateQuery);
+
+    console.log("Master level updated successfully.");
+  } catch (err) {
+    console.error("Error updating master level:", err);
+  } finally {
+    // Always release the connection back to the pool
+    if (connection) {
+      connection.close(); // This closes the connection and releases it back to the pool
+    }
+  }
 };
 
 const minute = 60 * 1000; //miliseconds
