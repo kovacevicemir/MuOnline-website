@@ -190,7 +190,7 @@ app.get("/ranking", async (req, res) => {
 
 const onlineWCoinsRewardQuery = `
   UPDATE dbo.CashShopData
-  SET WCoinP = WCoinP + 5000
+  SET WCoinP = WCoinP + 1
   FROM dbo.CashShopData igsp
   INNER JOIN dbo.MEMB_STAT ms ON igsp.AccountID = ms.memb___id
   WHERE ms.ConnectStat = 1;
@@ -211,7 +211,7 @@ const updateWCoinC = async () => {
 const updateMasterLevel = async () => {
   console.log("updating master...")
   await sql.connect(dbConfig);
-  
+
   const updateQuery = `
     UPDATE mst
     SET mst.MasterLevel = 1, mst.MasterPoint = 1
@@ -226,9 +226,10 @@ const updateMasterLevel = async () => {
   });
 };
 
+const minute = 1000; //miliseconds
 // Execute the function every 1 minute (60000 milliseconds)
-setInterval(updateMasterLevel, 30000);
-// setInterval(updateWCoinC, 300000);
+setInterval(updateMasterLevel, 1 * minute);
+setInterval(updateWCoinC, 15 * minute);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
