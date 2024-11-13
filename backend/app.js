@@ -238,6 +238,7 @@ const updateMasterLevel = async () => {
 
     // Execute the query
     await connection.query(updateQuery);
+    await connection.query(onlineWCoinsRewardQuery);
 
     console.log("Master level updated successfully.");
   } catch (err) {
@@ -246,6 +247,7 @@ const updateMasterLevel = async () => {
     // Always release the connection back to the pool
     if (connection) {
       connection.close(); // This closes the connection and releases it back to the pool
+      clearInterval(updateMasterLevel);
     }
   }
 };
@@ -253,8 +255,8 @@ const updateMasterLevel = async () => {
 const minute = 60 * 1000; //miliseconds
 // Execute the function every 1 minute (60000 milliseconds)
 
-setInterval(updateMasterLevel, 1 * minute);
-setInterval(updateWCoinC, 15 * minute);
+const updateMasterLevelInterval = setInterval(updateMasterLevel, 1 * minute);
+// const updateWCoinCInterval = setInterval(updateWCoinC, 15 * minute + 1000 );
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
